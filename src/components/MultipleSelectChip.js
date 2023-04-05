@@ -49,7 +49,8 @@ function getStyles(location, userLocation, theme) {
     };
 }
 
-function filterBar() {
+function MultipleSelectChip() {
+
     const theme = useTheme();
     const [userLocation, setUserLocation] = useState([]);
 
@@ -98,4 +99,4 @@ function filterBar() {
     );
 }
 
-export default filterBar;
+export default MultipleSelectChip;
