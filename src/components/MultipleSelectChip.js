@@ -40,15 +40,6 @@ const locations = [
     'Võrumaa'
 ];
 
-function getStyles(location, userLocation, theme) {
-    return {
-        fontWeight:
-            userLocation.indexOf(location) === -1
-                ? theme.typography.fontWeightRegular
-                : theme.typography.fontWeightMedium,
-    };
-}
-
 function MultipleSelectChip() {
 
     const theme = useTheme();
@@ -67,10 +58,8 @@ function MultipleSelectChip() {
     return (
         <div>
             <FormControl sx={{ m: 1, width: 300 }}>
-                <InputLabel id="demo-multiple-chip-label">Choose location</InputLabel>
+                <InputLabel>Choose location</InputLabel>
                 <Select
-                    // labelId="demo-multiple-chip-label"
-                    // id="demo-multiple-chip"
                     multiple
                     value={userLocation}
                     onChange={handleChange}
@@ -88,7 +77,6 @@ function MultipleSelectChip() {
                         <MenuItem
                             key={location}
                             value={location}
-                            style={getStyles(location, userLocation, theme)}
                         >
                             {location}
                         </MenuItem>
