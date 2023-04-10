@@ -5,6 +5,20 @@ import App from "./App";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import BakerProfilePage from "./components/BakerProfilePage";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "bakerProfilePage",
+    element: <BakerProfilePage />,
+  },
+]);
+
 //____Theme Provider
 const theme = createTheme({
   palette: {
@@ -15,8 +29,8 @@ const theme = createTheme({
       main: "#22ff00",
     },
     background: {
-      default: "#86CFC7"
-    }
+      default: "#86CFC7",
+    },
   },
   typography: {
     h1: {
@@ -63,7 +77,6 @@ const theme = createTheme({
               backgroundColor: "#C27F85",
               color: "#EDD9DB",
               boxShadow: "0px 1px 8px #FDE2E2",
-
             },
           },
         },
@@ -77,7 +90,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
+      <RouterProvider router={router} />
     </ThemeProvider>
   </React.StrictMode>
 );
