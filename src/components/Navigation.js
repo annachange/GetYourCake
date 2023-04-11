@@ -2,9 +2,19 @@ import React from "react";
 // import BakerProfile from "./components/bakerProfileComponent/BakerProfile";
 import Button from "@mui/material/Button";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
+import {signOut} from "firebase/auth";
+import {auth} from "../firebase";
 
-function Navigation() {
+import {useAuthValue} from '../AuthContext'
+
+function Navigation(props) {
+
+  const {currentUser} = useAuthValue()
+  const navigate = useNavigate()
+
+  console.log(currentUser)
+
   return (
     <nav class="navbar navbar-custom navbar-expand-lg sticky-top">
       <div class="container-fluid justify-content-between">
@@ -34,7 +44,16 @@ function Navigation() {
             {" "}
             <Link to="/ProductSelectionPage">Select a product</Link>
           </Button>
-          <Button sx={{ marginLeft: 1 }}>LOG IN</Button>
+          {currentUser === null &&
+            <Button sx={{ marginLeft: 1 }} onClick={() => navigate("login")}>LOG IN</Button>
+          }
+          {currentUser !== null &&
+            <Button onClick={() => signOut(auth)}>Sign Out</Button>
+          }
+
+          {currentUser !== null &&
+              <Button onClick={() => navigate("profile")}>Profile</Button>
+          }
           <Button sx={{ marginLeft: 1, height: "42px" }}>
             <ShoppingCartRoundedIcon />{" "}
           </Button>

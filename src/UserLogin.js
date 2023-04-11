@@ -1,5 +1,6 @@
-import Register from './Register';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+
+import Register from './Register';
 import Profile from './Profile';
 import VerifyEmail from './VerifyEmail';
 import Login from './Login';

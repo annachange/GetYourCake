@@ -21,8 +21,14 @@ import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import Rating from '@mui/material/Rating';
 
-
-
+const baker = [
+    { id: 1, profilePic: personimg1, cakes : [
+            { id: 1, src: cakeimg1, title: '50 EUR', description: 'This is pistachio' },
+            { id: 2, src: cakeimg2, title: '25 EUR', description: 'This is rafaello' },
+            { id: 3, src: cakeimg3, title: '25 EUR', description: 'This is red velvet' },
+            { id: 4, src: cakeimg4, title: '35 EUR', description: 'This is snickers' }],
+        intolerancies: "gluten free",
+        location: Tallinn, }]
 
 
 import cakeimg1 from '../images/cake1.jpg';
@@ -35,17 +41,31 @@ import img1 from "../images/image1.jpg";
 import img2 from "../images/image2.jpg";
 import img3 from "../images/image3.jpg";
 import ComboBoxAnna from "./ComboBoxAnna";
-
-
-const cakes = [
-    { id: 1, src: cakeimg1, title: '50 EUR', description: 'This is pistachio' },
-    { id: 2, src: cakeimg2, title: '25 EUR', description: 'This is rafaello' },
-    { id: 3, src: cakeimg3, title: '25 EUR', description: 'This is red velvet' },
-    { id: 4, src: cakeimg4, title: '35 EUR', description: 'This is snickers' },
-];
-
-
-
+//
+//
+// const cakes = [
+//     { id: 1, src: cakeimg1, title: '50 EUR', description: 'This is pistachio' },
+//     { id: 2, src: cakeimg2, title: '25 EUR', description: 'This is rafaello' },
+//     { id: 3, src: cakeimg3, title: '25 EUR', description: 'This is red velvet' },
+//     { id: 4, src: cakeimg4, title: '35 EUR', description: 'This is snickers' },
+// ];
+<ImageList sx={{ width: 380, height: 500 }}>
+    {cakes.map((item) => (
+        <ImageListItem key={item.src}>
+            <img
+                src={`${item.src}?w=248&fit=crop&auto=format`}
+                srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                alt={item.title}
+                loading="lazy"
+            />
+            <ImageListItemBar
+                title={item.title}
+                subtitle={item.description}
+                position="below"
+            />
+        </ImageListItem>
+    ))}
+</ImageList>
 function maincards() {
 
     const headerStyle = {
@@ -53,7 +73,7 @@ function maincards() {
     };
 
     return (
-        // <div className="container">
+        <div className="container">
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                 <Grid item xs={4}>
 
@@ -403,7 +423,7 @@ function maincards() {
 
             </Grid>
 
-        // </div>
+        </div>
 
 
 

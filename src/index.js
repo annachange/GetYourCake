@@ -7,21 +7,23 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import BakerProfilePage from "./components/BakerProfilePage";
 import ProductSelectionPage from "./components/ProductSelectionPage";
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from "react-router-dom";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "bakerProfilePage",
-    element: <BakerProfilePage />,
-  },
-  {
-    path: "productSelectionPage",
-    element: <ProductSelectionPage />,
-  },
-]);
+
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <App />,
+//   },
+//   {
+//     path: "bakerProfilePage",
+//     element: <BakerProfilePage />,
+//   },
+//   {
+//     path: "productSelectionPage",
+//     element: <ProductSelectionPage />,
+//   },
+// ]);
 
 //____Theme Provider
 const theme = createTheme({
@@ -94,7 +96,12 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <RouterProvider router={router} />
+
+      {/*<RouterProvider router={router} />*/}
+      <BrowserRouter >
+        <App />
+      </BrowserRouter>
+
     </ThemeProvider>
   </React.StrictMode>
 );
