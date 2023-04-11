@@ -22,7 +22,7 @@ function Navigation() {
               width="13%"
               class="d-inline-block align-text-center"
             />
-            GetYourCake.
+            GetYourCake
           </Link>
         </div>
         <div className="navbar-buttons">
