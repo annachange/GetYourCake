@@ -2,11 +2,13 @@ import React from "react";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import NavbarFirstPage from './components/NavbarFirstPage';
+import MainViewCards from "./components/MainViewCards";
 //import UserLogin from './UserLogin';
 
 
 
 import './App.css';
+
 
 function App() {
     return (
@@ -19,6 +21,7 @@ function App() {
                     {/* Put your page content here */}
                     <div className="content section">
                         <NavbarFirstPage/>
+                        <MainViewCards />
 
 
                         {/*<UserLogin/>*/}

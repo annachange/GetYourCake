@@ -31,12 +31,6 @@ import img5 from '../images/image5.jpg';
 import img6 from '../images/image6.jpg';
 
 
-import cakeimg1 from '../images/cake1.jpg';
-import cakeimg2 from '../images/cake2.jpg';
-import cakeimg3 from '../images/cake3.jpg';
-import cakeimg4 from '../images/cake4.jpg';
-
-import personimg1 from '../images/person1.jpg';
 
 
 const cards = [
@@ -46,13 +40,6 @@ const cards = [
     { id: 4, src: img4, title: 'Image 4', description: 'This is snickers' },
     { id: 5, src: img5, title: 'Image 5', description: 'This is chocolate' },
     { id: 6, src: img6, title: 'Image 6', description: 'This is rasberry' },
-];
-
-const cakes = [
-    { id: 1, src: cakeimg1, title: '50 EUR', description: 'This is pistachio' },
-    { id: 2, src: cakeimg2, title: '25 EUR', description: 'This is rafaello' },
-    { id: 3, src: cakeimg3, title: '25 EUR', description: 'This is red velvet' },
-    { id: 4, src: cakeimg4, title: '35 EUR', description: 'This is snickers' },
 ];
 
 
@@ -104,61 +91,6 @@ function ComboBoxAnna() {
             <Grid container spacing={2}>
                 <Grid item xs={6}>
 
-                    <Card sx={{ maxWidth: 545 }}>
-                        <CardHeader
-                            avatar={
-                                <Avatar alt="Remy Sharp"
-                                        src={personimg1}
-                                        sx={{ width: 100, height: 100 }}/>
-                            }
-
-                            title={
-                                <>
-                                    Maria Mang&nbsp;
-                                    <Rating name="example-rating" value={3} readOnly />
-                                </>
-                            }
-
-
-
-
-
-                            subheader="Mustamäe, Tallinn"
-                        >
-                        </CardHeader>
-
-
-
-
-                        <CardContent>
-                            <ImageList sx={{ width: 400, height: 600 }}>
-                                {cakes.map((item) => (
-                                    <ImageListItem key={item.src}>
-                                        <img
-                                            src={`${item.src}?w=248&fit=crop&auto=format`}
-                                            srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                                            alt={item.title}
-                                            loading="lazy"
-                                        />
-                                        <ImageListItemBar
-                                            title={item.title}
-                                            subtitle={item.description}
-                                            position="below"
-                                        />
-                                    </ImageListItem>
-                                ))}
-                            </ImageList>
-
-
-
-
-                        </CardContent>
-                        <CardActions>
-                            <Button size="small">Share</Button>
-                            <Button size="small">Learn More</Button>
-
-                        </CardActions>
-                    </Card>
 
 
 
