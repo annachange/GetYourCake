@@ -42,10 +42,8 @@ export default function MultipleSelectCheckmarks() {
     return (
         <div>
             <FormControl sx={{ m: 1, width: 300 }}>
-                <InputLabel id="demo-multiple-checkbox-label">Choose limitations</InputLabel>
+                <InputLabel >Choose limitations</InputLabel>
                 <Select
-                    labelId="demo-multiple-checkbox-label"
-                    id="demo-multiple-checkbox"
                     multiple
                     value={userLimitation}
                     onChange={handleChange}
