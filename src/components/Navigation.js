@@ -15,7 +15,7 @@ function Navigation() {
             alignItems: "center",
           }}
         >
-          <a class="navbar-brand" href="index.html">
+          <Link class="navbar-brand" to="/">
             <img
               src="/gyk_logo.png"
               alt=""
@@ -23,12 +23,16 @@ function Navigation() {
               class="d-inline-block align-text-center"
             />
             GetYourCake.
-          </a>
+          </Link>
         </div>
         <div className="navbar-buttons">
           <Button>
             {" "}
             <Link to="/bakerProfilePage"> Discover a baker</Link>
+          </Button>
+          <Button>
+            {" "}
+            <Link to="/ProductSelectionPage">Select a product</Link>
           </Button>
           <Button sx={{ marginLeft: 1 }}>LOG IN</Button>
           <Button sx={{ marginLeft: 1, height: "42px" }}>

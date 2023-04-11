@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import BakerProfilePage from "./components/BakerProfilePage";
+import ProductSelectionPage from "./components/ProductSelectionPage";
+
 
 const router = createBrowserRouter([
   {
@@ -16,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "bakerProfilePage",
     element: <BakerProfilePage />,
+  },
+  {
+    path: "productSelectionPage",
+    element: <ProductSelectionPage />,
   },
 ]);
 
