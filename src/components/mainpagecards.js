@@ -27,7 +27,6 @@ import './App.css';
 
 
 
-
 import img1 from './images/image1.jpg';
 import img2 from './images/image2.jpg';
 import img3 from './images/image3.jpg';
@@ -102,7 +101,7 @@ function ComboBox() {
 
     const handleChange = (event) => {
         setSelectedValue(event.target.value);
-        }
+    }
 
 
 
@@ -122,7 +121,7 @@ function ComboBox() {
 
                             title={
                                 <>
-                                    Maria Mang&nbsp;
+                                    Maria&nbsp;
                                     <Rating name="example-rating" value={3} readOnly />
                                 </>
                             }
