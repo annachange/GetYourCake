@@ -84,6 +84,11 @@ footer {
   justify-content: left;
 }
 
+.AppBar {
+
+  background-color: bisque;
+}
+
 .navbar-brand:hover {
   font-size: 2rem;
   font-weight: bold;
@@ -111,7 +116,7 @@ footer {
 /* shopping-btn {
   width: 1%;
 } */
-/* 
+/*
 shopping-btn:hover {
   width: 1%;
 } */
