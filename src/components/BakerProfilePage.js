@@ -1,7 +1,7 @@
 import React from "react";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
-import CakePriceUpdate from "./CakePriceUpdate";
+import BakerViewCards from "./BakerViewCards";
 
 function BakerProfilePage() {
   return (
@@ -13,10 +13,7 @@ function BakerProfilePage() {
         <div className="content">
           <div className="content section">
             {/* <img src="/gyk_logo.png" className="App-logo" alt="logo" /> */}
-            <p>Baker's profile page</p>
-
-
-            <CakePriceUpdate />
+            <BakerViewCards />
           </div>
           {/* Put your page content here */}
         </div>
