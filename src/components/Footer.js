@@ -3,6 +3,7 @@ import React from "react";
 function Footer() {
 
     return (
+        <div>
         <footer>
           <div class="container-fluid text-light">
             <div class="row">
@@ -18,6 +19,7 @@ function Footer() {
             </div>
           </div>
         </footer>
+</div>
     )
 }
 

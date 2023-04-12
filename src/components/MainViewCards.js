@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Radio from '@mui/material/Radio';
-import { Grid, Card, CardContent, CardMedia, CardHeader } from '@mui/material';
+import { Grid, Card, CardContent, CardMedia, CardHeader, Box } from '@mui/material';
 import FormGroup from '@mui/material/FormGroup';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -51,15 +51,175 @@ const cakes = [
 function maincards() {
 
     const headerStyle = {
-        backgroundColor: "#C27F85",
+        backgroundColor: "#cca2a2",
     };
 
     return (
-        // <div className="container">
-            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                <Grid item xs={4}>
+            <Grid justifyContent="center" container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
 
-                    <Card sx={{ maxWidth: 500 }}>
+
+                    <Grid item xs={4}>
+                        <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85'}} >
+                            <CardHeader
+                                style={headerStyle}
+                                avatar={
+                                    <Avatar alt="Remy Sharp"
+                                            src={personimg1}
+                                            sx={{ width: 100, height: 100 }}/>
+                                }
+                                title={
+                                    <>
+                                        Person 6&nbsp;
+                                        <Rating name="example-rating" value={3} readOnly />
+                                    </>
+                                }
+                                subheader="Mustamäe, Tallinn"
+                            >
+                            </CardHeader>
+
+
+
+
+                            <CardContent sx={{ width: 380, height: 470 }}>
+                                <ImageList sx={{ width: 380, height: 500 }}>
+                                    {cakes.map((item) => (
+                                        <ImageListItem key={item.src}>
+                                            <img
+                                                src={`${item.src}?w=248&fit=crop&auto=format`}
+                                                srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                                                alt={item.title}
+                                                loading="lazy"
+                                            />
+                                            <ImageListItemBar
+                                                title={item.title}
+                                                subtitle={item.description}
+                                                position="below"
+                                            />
+                                        </ImageListItem>
+                                    ))}
+                                </ImageList>
+
+
+
+
+                            </CardContent>
+                            <CardActions sx={{ justifyContent: 'center' }}>
+                                <Button>Check out all cakes</Button>
+
+                            </CardActions>
+                        </Card>
+
+                    </Grid>
+
+
+
+
+                    <Grid item xs={4}>
+                        <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85'}} >
+                            <CardHeader
+                                style={headerStyle}
+                                avatar={
+                                    <Avatar alt="Remy Sharp"
+                                            src={personimg1}
+                                            sx={{ width: 100, height: 100 }}/>
+                                }
+                                title={
+                                    <>
+                                        Person 6&nbsp;
+                                        <Rating name="example-rating" value={3} readOnly />
+                                    </>
+                                }
+                                subheader="Mustamäe, Tallinn"
+                            >
+                            </CardHeader>
+
+
+
+
+                            <CardContent sx={{ width: 380, height: 470 }}>
+                                <ImageList sx={{ width: 380, height: 500 }}>
+                                    {cakes.map((item) => (
+                                        <ImageListItem key={item.src}>
+                                            <img
+                                                src={`${item.src}?w=248&fit=crop&auto=format`}
+                                                srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                                                alt={item.title}
+                                                loading="lazy"
+                                            />
+                                            <ImageListItemBar
+                                                title={item.title}
+                                                subtitle={item.description}
+                                                position="below"
+                                            />
+                                        </ImageListItem>
+                                    ))}
+                                </ImageList>
+
+
+
+
+                            </CardContent>
+                            <CardActions sx={{ justifyContent: 'center' }}>
+                                <Button>Check out all cakes</Button>
+
+                            </CardActions>
+                        </Card>
+
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85'}} >
+                            <CardHeader
+                                style={headerStyle}
+                                avatar={
+                                    <Avatar alt="Remy Sharp"
+                                            src={personimg1}
+                                            sx={{ width: 100, height: 100 }}/>
+                                }
+                                title={
+                                    <>
+                                        Person 6&nbsp;
+                                        <Rating name="example-rating" value={3} readOnly />
+                                    </>
+                                }
+                                subheader="Mustamäe, Tallinn"
+                            >
+                            </CardHeader>
+
+
+
+
+                            <CardContent sx={{ width: 380, height: 470 }}>
+                                <ImageList sx={{ width: 380, height: 500 }}>
+                                    {cakes.map((item) => (
+                                        <ImageListItem key={item.src}>
+                                            <img
+                                                src={`${item.src}?w=248&fit=crop&auto=format`}
+                                                srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                                                alt={item.title}
+                                                loading="lazy"
+                                            />
+                                            <ImageListItemBar
+                                                title={item.title}
+                                                subtitle={item.description}
+                                                position="below"
+                                            />
+                                        </ImageListItem>
+                                    ))}
+                                </ImageList>
+
+
+
+
+                            </CardContent>
+                            <CardActions sx={{ justifyContent: 'center' }}>
+                                <Button>Check out all cakes</Button>
+
+                            </CardActions>
+                        </Card>
+
+                    </Grid>
+                <Grid item xs={4}>
+                    <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85'}} >
                         <CardHeader
                             style={headerStyle}
                             avatar={
@@ -67,303 +227,12 @@ function maincards() {
                                         src={personimg1}
                                         sx={{ width: 100, height: 100 }}/>
                             }
-
-                            title={
-                                <>
-                                    Person 1&nbsp;
-                                    <Rating name="example-rating" value={3} readOnly />
-                                </>
-                            }
-
-                            subheader="Mustamäe, Tallinn"
-                        >
-                        </CardHeader>
-                        <CardContent>
-                            <ImageList sx={{ width: 380, height: 500 }}>
-                                {cakes.map((item) => (
-                                    <ImageListItem key={item.src}>
-                                        <img
-                                            src={`${item.src}?w=248&fit=crop&auto=format`}
-                                            srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                                            alt={item.title}
-                                            loading="lazy"
-                                        />
-                                        <ImageListItemBar
-                                            title={item.title}
-                                            subtitle={item.description}
-                                            position="below"
-                                        />
-                                    </ImageListItem>
-                                ))}
-                            </ImageList>
-                        </CardContent>
-                        <CardActions>
-                            <Button size="small">Share</Button>
-                            <Button size="small">Learn More</Button>
-
-                        </CardActions>
-                    </Card>
-
-
-
-                </Grid>
-                <Grid item xs={4}>
-                    <Card sx={{ maxWidth: 500 }}>
-                        <CardHeader
-                            style={headerStyle}
-                            avatar={
-                                <Avatar alt="Remy Sharp"
-                                        src={personimg1}
-                                        sx={{ width: 100, height: 100 }}/>
-                            }
-
-                            title={
-                                <>
-                                    Person 2&nbsp;
-                                    <Rating name="example-rating" value={3} readOnly />
-                                </>
-                            }
-
-
-
-
-
-                            subheader="Mustamäe, Tallinn"
-                        >
-                        </CardHeader>
-
-
-
-
-                        <CardContent>
-                            <ImageList sx={{ width: 380, height: 500 }}>
-                                {cakes.map((item) => (
-                                    <ImageListItem key={item.src}>
-                                        <img
-                                            src={`${item.src}?w=248&fit=crop&auto=format`}
-                                            srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                                            alt={item.title}
-                                            loading="lazy"
-                                        />
-                                        <ImageListItemBar
-                                            title={item.title}
-                                            subtitle={item.description}
-                                            position="below"
-                                        />
-                                    </ImageListItem>
-                                ))}
-                            </ImageList>
-
-
-
-
-                        </CardContent>
-                        <CardActions>
-                            <Button size="small">Share</Button>
-                            <Button size="small">Learn More</Button>
-
-                        </CardActions>
-                    </Card>
-
-                </Grid>
-                <Grid item xs={4}>
-
-                    <Card sx={{ maxWidth: 500 }}>
-                        <CardHeader
-                            style={headerStyle}
-                            avatar={
-                                <Avatar alt="Remy Sharp"
-                                        src={personimg1}
-                                        sx={{ width: 100, height: 100 }}/>
-                            }
-
-                            title={
-                                <>
-                                    Person 3&nbsp;
-                                    <Rating name="example-rating" value={3} readOnly />
-                                </>
-                            }
-
-
-
-
-
-                            subheader="Mustamäe, Tallinn"
-                        >
-                        </CardHeader>
-
-
-
-
-                        <CardContent>
-                            <ImageList sx={{ width: 380, height: 500 }}>
-                                {cakes.map((item) => (
-                                    <ImageListItem key={item.src}>
-                                        <img
-                                            src={`${item.src}?w=248&fit=crop&auto=format`}
-                                            srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                                            alt={item.title}
-                                            loading="lazy"
-                                        />
-                                        <ImageListItemBar
-                                            title={item.title}
-                                            subtitle={item.description}
-                                            position="below"
-                                        />
-                                    </ImageListItem>
-                                ))}
-                            </ImageList>
-
-
-
-
-                        </CardContent>
-                        <CardActions>
-                            <Button size="small">Share</Button>
-                            <Button size="small">Learn More</Button>
-
-                        </CardActions>
-                    </Card>
-                </Grid>
-                <Grid item xs={4}>
-                    <Card sx={{ maxWidth: 500 }}>
-                        <CardHeader
-                            style={headerStyle}
-                            avatar={
-                                <Avatar alt="Remy Sharp"
-                                        src={personimg1}
-                                        sx={{ width: 100, height: 100 }}/>
-                            }
-
-                            title={
-                                <>
-                                    Person 4&nbsp;
-                                    <Rating name="example-rating" value={3} readOnly />
-                                </>
-                            }
-
-
-
-
-
-                            subheader="Mustamäe, Tallinn"
-                        >
-                        </CardHeader>
-
-
-
-
-                        <CardContent>
-                            <ImageList sx={{ width: 380, height: 500 }}>
-                                {cakes.map((item) => (
-                                    <ImageListItem key={item.src}>
-                                        <img
-                                            src={`${item.src}?w=248&fit=crop&auto=format`}
-                                            srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                                            alt={item.title}
-                                            loading="lazy"
-                                        />
-                                        <ImageListItemBar
-                                            title={item.title}
-                                            subtitle={item.description}
-                                            position="below"
-                                        />
-                                    </ImageListItem>
-                                ))}
-                            </ImageList>
-
-
-
-
-                        </CardContent>
-                        <CardActions>
-                            <Button size="small">Share</Button>
-                            <Button size="small">Learn More</Button>
-
-                        </CardActions>
-                    </Card>
-
-                </Grid>
-                <Grid item xs={4}>
-                    <Card sx={{ maxWidth: 500 }}>
-                        <CardHeader
-                            style={headerStyle}
-                            avatar={
-                                <Avatar alt="Remy Sharp"
-                                        src={personimg1}
-                                        sx={{ width: 100, height: 100 }}/>
-                            }
-
-                            title={
-                                <>
-                                    Person 5&nbsp;
-                                    <Rating name="example-rating" value={3} readOnly />
-                                </>
-                            }
-
-
-
-
-
-                            subheader="Mustamäe, Tallinn"
-                        >
-                        </CardHeader>
-
-
-
-
-                        <CardContent>
-                            <ImageList sx={{ width: 380, height: 500 }}>
-                                {cakes.map((item) => (
-                                    <ImageListItem key={item.src}>
-                                        <img
-                                            src={`${item.src}?w=248&fit=crop&auto=format`}
-                                            srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                                            alt={item.title}
-                                            loading="lazy"
-                                        />
-                                        <ImageListItemBar
-                                            title={item.title}
-                                            subtitle={item.description}
-                                            position="below"
-                                        />
-                                    </ImageListItem>
-                                ))}
-                            </ImageList>
-
-
-
-
-                        </CardContent>
-                        <CardActions>
-                            <Button size="small">Share</Button>
-                            <Button size="small">Learn More</Button>
-
-                        </CardActions>
-                    </Card>
-
-                </Grid>
-                <Grid item xs={4}>
-                    <Card sx={{ maxWidth: 500 }}>
-                        <CardHeader
-                            style={headerStyle}
-                            avatar={
-                                <Avatar alt="Remy Sharp"
-                                        src={personimg1}
-                                        sx={{ width: 100, height: 100 }}/>
-                            }
-
                             title={
                                 <>
                                     Person 6&nbsp;
                                     <Rating name="example-rating" value={3} readOnly />
                                 </>
                             }
-
-
-
-
-
                             subheader="Mustamäe, Tallinn"
                         >
                         </CardHeader>
@@ -371,7 +240,7 @@ function maincards() {
 
 
 
-                        <CardContent>
+                        <CardContent sx={{ width: 380, height: 470 }}>
                             <ImageList sx={{ width: 380, height: 500 }}>
                                 {cakes.map((item) => (
                                     <ImageListItem key={item.src}>
@@ -394,9 +263,112 @@ function maincards() {
 
 
                         </CardContent>
-                        <CardActions>
-                            <Button size="small">Share</Button>
-                            <Button size="small">Learn More</Button>
+                        <CardActions sx={{ justifyContent: 'center' }}>
+                            <Button>Check out all cakes</Button>
+
+                        </CardActions>
+                    </Card>
+
+                </Grid>
+                <Grid item xs={4}>
+                    <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85'}} >
+                        <CardHeader
+                            style={headerStyle}
+                            avatar={
+                                <Avatar alt="Remy Sharp"
+                                        src={personimg1}
+                                        sx={{ width: 100, height: 100 }}/>
+                            }
+                            title={
+                                <>
+                                    Person 6&nbsp;
+                                    <Rating name="example-rating" value={3} readOnly />
+                                </>
+                            }
+                            subheader="Mustamäe, Tallinn"
+                        >
+                        </CardHeader>
+
+
+
+
+                        <CardContent sx={{ width: 380, height: 470 }}>
+                            <ImageList sx={{ width: 380, height: 500 }}>
+                                {cakes.map((item) => (
+                                    <ImageListItem key={item.src}>
+                                        <img
+                                            src={`${item.src}?w=248&fit=crop&auto=format`}
+                                            srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                                            alt={item.title}
+                                            loading="lazy"
+                                        />
+                                        <ImageListItemBar
+                                            title={item.title}
+                                            subtitle={item.description}
+                                            position="below"
+                                        />
+                                    </ImageListItem>
+                                ))}
+                            </ImageList>
+
+
+
+
+                        </CardContent>
+                        <CardActions sx={{ justifyContent: 'center' }}>
+                            <Button>Check out all cakes</Button>
+
+                        </CardActions>
+                    </Card>
+
+                </Grid>
+                <Grid item xs={4}>
+                    <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85'}} >
+                        <CardHeader
+                            style={headerStyle}
+                            avatar={
+                                <Avatar alt="Remy Sharp"
+                                        src={personimg1}
+                                        sx={{ width: 100, height: 100 }}/>
+                            }
+                            title={
+                                <>
+                                    Person 6&nbsp;
+                                    <Rating name="example-rating" value={3} readOnly />
+                                </>
+                            }
+                            subheader="Mustamäe, Tallinn"
+                        >
+                        </CardHeader>
+
+
+
+
+                        <CardContent sx={{ width: 380, height: 470 }}>
+                            <ImageList sx={{ width: 380, height: 500 }}>
+                                {cakes.map((item) => (
+                                    <ImageListItem key={item.src}>
+                                        <img
+                                            src={`${item.src}?w=248&fit=crop&auto=format`}
+                                            srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                                            alt={item.title}
+                                            loading="lazy"
+                                        />
+                                        <ImageListItemBar
+                                            title={item.title}
+                                            subtitle={item.description}
+                                            position="below"
+                                        />
+                                    </ImageListItem>
+                                ))}
+                            </ImageList>
+
+
+
+
+                        </CardContent>
+                        <CardActions sx={{ justifyContent: 'center' }}>
+                            <Button>Check out all cakes</Button>
 
                         </CardActions>
                     </Card>
@@ -405,7 +377,7 @@ function maincards() {
 
             </Grid>
 
-        // </div>
+
 
 
 

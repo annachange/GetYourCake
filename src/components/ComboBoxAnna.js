@@ -27,7 +27,7 @@ import Divider from '@mui/material/Divider';
 import Slider from '@mui/material/Slider';
 
 import CakeFlavoursSelection from "./CakeFlavoursSelection";
-
+import textpage from "./textpage";
 
 
 import img1 from '../images/image1.jpg';
@@ -41,6 +41,8 @@ import cakeimg2 from '../images/cake2.jpg';
 import cakeimg1 from "../images/cake1.jpg";
 import cakeimg3 from "../images/cake3.jpg";
 import cakeimg4 from "../images/cake4.jpg";
+import Switcher from "./textpage";
+import SwitcherTest from "./SwitcherTest";
 
 
 const cards = [
@@ -148,13 +150,11 @@ function ComboBoxAnna() {
 
                 </Grid>
                 <Grid item xs={6} >
-                    <Box  borderRadius={5} border={2} borderColor="#C27F85" p={2} sx={{ width: '100%', maxWidth: 600 }}>
-
-
+                    <Box  borderRadius={16} border={3} borderColor="#C27F85" p={2} sx={{ width: '100%', maxWidth: 600 }}>
 
                     <div>
                         <Typography variant="h4">Cake "Fruit Selection"</Typography>
-                        <Chip label={`TOTAL PRICE IS ${calculatePrice()} EUR`} variant="outlined" />
+
                     </div>
                     <div className="form-section" sx={{ width: 300 }}>
                         <Typography variant="h6">Cake size (kg)</Typography>
@@ -175,9 +175,11 @@ function ComboBoxAnna() {
                         />
                     </div>
 
-                        <Divider />
+                        <Divider sx={{ marginBottom: "10px" }}>
+                            <Chip size="large" label="Choose flavour" />
+                        </Divider>
                     <div className="form-section">
-                        <Typography variant="h6">Cake flavours</Typography>
+
 <CakeFlavoursSelection />
 
 
@@ -188,11 +190,17 @@ function ComboBoxAnna() {
 
 
                     </div>
-                        <Divider />
+                        <Divider sx={{ marginBottom: "10px" }}>
+                            <Chip size="large" label="Delivery" />
+                        </Divider>
 
                     <div className="form-section">
-                        <Typography variant="h6">Delivery to your address</Typography>
+
+
+
+                        <SwitcherTest />
                         <FormControlLabel
+
                             control={
                                 <Switch
                                     checked={isSwitchOn}
@@ -204,27 +212,31 @@ function ComboBoxAnna() {
                             label='Yes'
                         />
                         {isSwitchOn && (
+                            <div style={{ display: "flex", alignItems: "center" }}>
+
                             <TextField
+                                sx={{width: 400}}
+                                justify="center"
                                 label="Please specify address"
                                 variant="outlined"
                                 value={address}
                                 onChange={handleAddressChange}
                             />
+                            </div>
                         )}
 
 
                     </div>
-                        <Divider />
-                        <div className="form-section">
-                            <Typography variant="h6">Limitations</Typography>
+                        <Divider sx={{ marginBottom: "10px" }}>
+                            <Chip size="large" label="Additional Order Information" />
+                        </Divider>
 
-                        </div>
-                        <Divider />
 
                     <div className="form-section">
-                        <Typography variant="h6">Additional Order Information</Typography>
+
                         <TextField
                             sx={{width: 400}}
+                            justify="center"
                             id="standard-multiline-static"
                             label="Additional Order Information"
                             multiline
@@ -233,7 +245,10 @@ function ComboBoxAnna() {
                         />
                     </div>
 
+                        <div>
 
+                            <Chip label={`TOTAL PRICE IS ${calculatePrice()} EUR`} variant="outlined" />
+                        </div>
 
                     <div> <Button>Add to cart</Button></div>
 

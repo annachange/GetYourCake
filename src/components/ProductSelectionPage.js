@@ -6,9 +6,6 @@ import ComboBoxAnna from "./ComboBoxAnna";
 function ProductSelectionPage() {
   return (
     <div>
-      <header>
-        <Navigation />
-      </header>
       <div className="content">
         <div className="content section">
           {/* <img src="/gyk_logo.png" className="App-logo" alt="logo" /> */}
@@ -18,7 +15,7 @@ function ProductSelectionPage() {
         </div>
         {/* Put your page content here */}
       </div>
-      <Footer />
+
     </div>
   );
 }

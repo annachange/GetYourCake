@@ -55,10 +55,10 @@ function bakercards() {
         <div className="container">
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                 <Grid item xs={4}>
-                    <Card sx={{ height: 420, borderRadius: 16, border: '3px solid #C27F85'}}>
+                    <Card sx={{ height: 350, width: 350, borderRadius: 16, border: '3px solid #C27F85'}}>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                             <CardMedia
-                                sx={{ width: 300, height: 300 }}
+                                sx={{ width: 250, height: 250 }}
                                 image={cakeimg1}
                                 title="green iguana"
                             />
@@ -75,10 +75,10 @@ function bakercards() {
                     </Card>
                 </Grid>
                 <Grid item xs={4}>
-                    <Card sx={{ height: 420, borderRadius: 16, border: '3px solid #C27F85'}}>
+                    <Card sx={{ height: 350, width: 350, borderRadius: 16, border: '3px solid #C27F85'}}>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                             <CardMedia
-                                sx={{ width: 300, height: 300 }}
+                                sx={{ width: 250, height: 250 }}
                                 image={cakeimg1}
                                 title="green iguana"
                             />
@@ -95,10 +95,10 @@ function bakercards() {
                     </Card>
                 </Grid>
                 <Grid item xs={4}>
-                    <Card sx={{ height: 420, borderRadius: 16, border: '3px solid #C27F85'}}>
+                    <Card sx={{ height: 350, width: 350, borderRadius: 16, border: '3px solid #C27F85'}}>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                             <CardMedia
-                                sx={{ width: 300, height: 300 }}
+                                sx={{ width: 250, height: 250 }}
                                 image={cakeimg1}
                                 title="green iguana"
                             />
@@ -115,10 +115,10 @@ function bakercards() {
                     </Card>
                 </Grid>
                 <Grid item xs={4}>
-                    <Card sx={{ height: 420, borderRadius: 16, border: '3px solid #C27F85'}}>
+                    <Card sx={{ height: 350, width: 350, borderRadius: 16, border: '3px solid #C27F85'}}>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                             <CardMedia
-                                sx={{ width: 300, height: 300 }}
+                                sx={{ width: 250, height: 250 }}
                                 image={cakeimg1}
                                 title="green iguana"
                             />
@@ -135,10 +135,10 @@ function bakercards() {
                     </Card>
                 </Grid>
                 <Grid item xs={4}>
-                    <Card sx={{ height: 420, borderRadius: 16, border: '3px solid #C27F85'}}>
+                    <Card sx={{ height: 350, width: 350, borderRadius: 16, border: '3px solid #C27F85'}}>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                             <CardMedia
-                                sx={{ width: 300, height: 300 }}
+                                sx={{ width: 250, height: 250 }}
                                 image={cakeimg1}
                                 title="green iguana"
                             />
@@ -155,10 +155,10 @@ function bakercards() {
                     </Card>
                 </Grid>
                 <Grid item xs={4}>
-                    <Card sx={{ height: 420, borderRadius: 16, border: '3px solid #C27F85'}}>
+                    <Card sx={{ height: 350, width: 350, borderRadius: 16, border: '3px solid #C27F85'}}>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                             <CardMedia
-                                sx={{ width: 300, height: 300 }}
+                                sx={{ width: 250, height: 250 }}
                                 image={cakeimg1}
                                 title="green iguana"
                             />

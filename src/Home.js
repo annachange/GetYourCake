@@ -24,8 +24,7 @@ function Home() {
 
 
             {/*<UserLogin/>*/}
-            <img src="/gyk_logo.png" className="App-logo" alt="logo"/>
-            <p>Ordering a cake is a piece of cake</p>
+
         </Box>
     );
 

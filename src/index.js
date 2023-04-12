@@ -32,7 +32,7 @@ const theme = createTheme({
       main: "#edd3d3",
     },
     secondary: {
-      main: "#22ff00",
+      main: "#ff006a",
     },
     background: {
       default: "#86CFC7",
@@ -89,6 +89,8 @@ const theme = createTheme({
         // Other variants
       ],
     },
+
+
   },
 });
 

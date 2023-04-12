@@ -1,5 +1,4 @@
 import React from "react";
-// import BakerProfile from "./components/bakerProfileComponent/BakerProfile";
 import Button from "@mui/material/Button";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import { Link , useNavigate} from "react-router-dom";
@@ -36,25 +35,23 @@ function Navigation(props) {
           </Link>
         </div>
         <div className="navbar-buttons">
-          <Button>
-            {" "}
-            <Link to="/bakerProfilePage"> Discover a baker</Link>
+          <Button component={Link} to="/bakerProfilePage">
+            DISCOVER BAKER
           </Button>
-          <Button>
-            {" "}
-            <Link to="/ProductSelectionPage">Select a product</Link>
+          <Button component={Link} to="/ProductSelectionPage">
+            ORDER CAKE
           </Button>
           {currentUser === null &&
-            <Button sx={{ marginLeft: 1 }} onClick={() => navigate("login")}>LOG IN</Button>
+            <Button onClick={() => navigate("login")}> LOG IN </Button>
           }
           {currentUser !== null &&
-            <Button onClick={() => signOut(auth)}>Sign Out</Button>
+            <Button onClick={() => signOut(auth)}>SIGN OUT</Button>
           }
 
           {currentUser !== null &&
-              <Button onClick={() => navigate("profile")}>Profile</Button>
+              <Button onClick={() => navigate("profile")}>PROFILE</Button>
           }
-          <Button sx={{ marginLeft: 1, height: "42px" }}>
+          <Button sx={{ height: "42px" }}>
             <ShoppingCartRoundedIcon />{" "}
           </Button>
         </div>

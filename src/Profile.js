@@ -16,6 +16,10 @@ function Profile() {
                     <strong>Email verified: </strong>
                     {`${currentUser?.emailVerified}`}
                 </p>
+                <p>
+                    <strong>My cakes: </strong>
+
+                </p>
                 {/*<span onClick={() => signOut(auth)}>Sign Out</span>*/}
             </div>
         </div>
