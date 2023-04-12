@@ -1,6 +1,7 @@
 import React from "react";
 import NavbarFirstPage from './components/NavbarFirstPage';
 import MainViewCards from "./components/MainViewCards";
+// import MainViewCardsTest from './MainViewCardsTest';
 //import UserLogin from './UserLogin';
 
 
@@ -19,6 +20,7 @@ function Home() {
         <Box sx={{pl:2, pr:2}}>
             <NavbarFirstPage/>
             <MainViewCards />
+
 
 
             {/*<UserLogin/>*/}
