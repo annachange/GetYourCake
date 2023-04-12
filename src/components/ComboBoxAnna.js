@@ -20,6 +20,13 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import Rating from '@mui/material/Rating';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
+import Slider from '@mui/material/Slider';
+
+import CakeFlavoursSelection from "./CakeFlavoursSelection";
 
 
 
@@ -30,7 +37,10 @@ import img4 from '../images/image4.jpg';
 import img5 from '../images/image5.jpg';
 import img6 from '../images/image6.jpg';
 
-
+import cakeimg2 from '../images/cake2.jpg';
+import cakeimg1 from "../images/cake1.jpg";
+import cakeimg3 from "../images/cake3.jpg";
+import cakeimg4 from "../images/cake4.jpg";
 
 
 const cards = [
@@ -39,16 +49,48 @@ const cards = [
     { id: 3, src: img3, title: 'Image 3', description: 'This is red velvet' },
     { id: 4, src: img4, title: 'Image 4', description: 'This is snickers' },
     { id: 5, src: img5, title: 'Image 5', description: 'This is chocolate' },
-    { id: 6, src: img6, title: 'Image 6', description: 'This is rasberry' },
+    { id: 6, src: img6, title: 'Image 6', description: 'This is raspberry' },
 ];
 
 
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
-
+function valuetext(value) {
+    return `${value}°C`;
+}
 
 function ComboBoxAnna() {
     const [isSwitchOn, setIsSwitchOn] = useState(false);
     const [address, setAddress] = useState('');
+
+
+    const marks = [
+
+        {
+            value: 1,
+            label: '1',
+        },
+        {
+            value: 2,
+            label: '2',
+        },
+        {
+            value: 3,
+            label: '3',
+        },
+        {
+            value: 4,
+            label: '4',
+        },
+        {
+            value: 5,
+            label: '5',
+
+},
+
+
+
+    ];
+
 
     const weightofCake = [
         {label: '0,5 kg', year: 1994},
@@ -84,75 +126,69 @@ function ComboBoxAnna() {
     }
 
 
+    const [selectedCakeSize, setSelectedCakeSize] = useState(2);
+    const calculatePrice = () => {
+        return selectedCakeSize * 20;
+    };
 
 
     return (
-        <div className="container">
-            <Grid container spacing={2}>
-                <Grid item xs={6}>
+        <Grid container rowSpacing={2}>
+            <Grid item xs={6} justify="center">
+                <Card sx={{ maxWidth: 345 }}>
+                        <CardMedia
+                            component="img"
+                            image={cakeimg2}
+                            alt="My Image"
 
+                        />
+                    </Card>
 
 
 
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={6} >
+                    <Box  borderRadius={5} border={2} borderColor="#C27F85" p={2} sx={{ width: '100%', maxWidth: 600 }}>
 
-                    <div className="form-section">
-                        <Typography variant="h6">Cake size</Typography>
-                        <Autocomplete
-                            disablePortal
-                            id="combo-box-demo"
-                            options={weightofCake}
-                            sx={{width: 300}}
-                            renderInput={(params) => <TextField {...params} />}
+
+
+                    <div>
+                        <Typography variant="h4">Cake "Fruit Selection"</Typography>
+                        <Chip label={`TOTAL PRICE IS ${calculatePrice()} EUR`} variant="outlined" />
+                    </div>
+                    <div className="form-section" sx={{ width: 300 }}>
+                        <Typography variant="h6">Cake size (kg)</Typography>
+                        <Slider
+                            aria-label="Cake sixe"
+                            defaultValue={2}
+                            getAriaValueText={valuetext}
+                            valueLabelDisplay="auto"
+                            step={0.2}
+                            marks
+                            min={0.6}
+                            max={5.4}
+                            color="secondary"
+                            sx={{width: 400}}
+                            marks={marks}
+                            valueLabelDisplay="on"
+                            onChange={(event, value) => setSelectedCakeSize(value)}
                         />
                     </div>
 
-
+                        <Divider />
                     <div className="form-section">
                         <Typography variant="h6">Cake flavours</Typography>
-                        <FormControl>
-                            <FormLabel id="demo-radio-buttons-group-label"></FormLabel>
-
-                            <RadioGroup row aria-label="gender" name="gender1" value={selectedValue} onChange={handleChange}>
-                                <FormControlLabel  labelPlacement="top" value="male" control={<Radio />} label={
-                                    <>
-                                        Pistachio
-                                        <img src={img1} alt="cat" style={{ width: '50px', height: '50px' }} />
-                                    </>
-                                } />
-                                <FormControlLabel
-                                    labelPlacement="top"
-                                    value="female"
-                                    control={<Radio />}
-                                    label={
-                                        <>
-                                            Rafaello
-                                            <img src={img2} alt="cat" style={{ width: '50px', height: '50px' }} />
-                                        </>
-                                    }
-                                />
-                                <FormControlLabel  labelPlacement="top" value="other" control={<Radio />} label={
-                                    <>
-                                        Red velvet
-                                        <img src={img3} alt="cat" style={{ width: '50px', height: '50px' }} />
-                                    </>
-                                } />
-                            </RadioGroup>
+<CakeFlavoursSelection />
 
 
-                            {/*<RadioGroup
-                        aria-labelledby="demo-radio-buttons-group-label"
-                        defaultValue="female"
-                        name="radio-buttons-group"
-                    >
-                        <FormControlLabel value="female" control={<Radio />} label="Chocolate" />
-                        <FormControlLabel value="male" control={<Radio />} label="Nutella" />
-                        <FormControlLabel value="other" control={<Radio />} label="Red velvet" />
-                    </RadioGroup>*/}
-                        </FormControl>
+
+
+
+
+
+
                     </div>
-
+                        <Divider />
 
                     <div className="form-section">
                         <Typography variant="h6">Delivery to your address</Typography>
@@ -165,7 +201,7 @@ function ComboBoxAnna() {
                                     color="primary"
                                 />
                             }
-                            label="Yes"
+                            label='Yes'
                         />
                         {isSwitchOn && (
                             <TextField
@@ -175,11 +211,20 @@ function ComboBoxAnna() {
                                 onChange={handleAddressChange}
                             />
                         )}
+
+
                     </div>
+                        <Divider />
+                        <div className="form-section">
+                            <Typography variant="h6">Limitations</Typography>
+
+                        </div>
+                        <Divider />
 
                     <div className="form-section">
                         <Typography variant="h6">Additional Order Information</Typography>
                         <TextField
+                            sx={{width: 400}}
                             id="standard-multiline-static"
                             label="Additional Order Information"
                             multiline
@@ -188,10 +233,15 @@ function ComboBoxAnna() {
                         />
                     </div>
 
+
+
+                    <div> <Button>Add to cart</Button></div>
+
+                    </Box>
                 </Grid>
             </Grid>
 
-        </div>
+
 
 
 
