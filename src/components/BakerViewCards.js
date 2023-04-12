@@ -55,7 +55,7 @@ function bakercards() {
         <div className="container">
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                 <Grid item xs={4}>
-                    <Card sx={{ height: 350, width: 350, borderRadius: 16, border: '3px solid #C27F85'}}>
+                    <Card sx={{ height: 350, width: 350, borderRadius: 10, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}}>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                             <CardMedia
                                 sx={{ width: 250, height: 250 }}
@@ -75,7 +75,7 @@ function bakercards() {
                     </Card>
                 </Grid>
                 <Grid item xs={4}>
-                    <Card sx={{ height: 350, width: 350, borderRadius: 16, border: '3px solid #C27F85'}}>
+                    <Card sx={{ height: 350, width: 350, borderRadius: 10, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}}>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                             <CardMedia
                                 sx={{ width: 250, height: 250 }}
@@ -95,7 +95,7 @@ function bakercards() {
                     </Card>
                 </Grid>
                 <Grid item xs={4}>
-                    <Card sx={{ height: 350, width: 350, borderRadius: 16, border: '3px solid #C27F85'}}>
+                    <Card sx={{ height: 350, width: 350, borderRadius: 10, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}}>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                             <CardMedia
                                 sx={{ width: 250, height: 250 }}
@@ -115,7 +115,7 @@ function bakercards() {
                     </Card>
                 </Grid>
                 <Grid item xs={4}>
-                    <Card sx={{ height: 350, width: 350, borderRadius: 16, border: '3px solid #C27F85'}}>
+                    <Card sx={{ height: 350, width: 350, borderRadius: 10, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}}>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                             <CardMedia
                                 sx={{ width: 250, height: 250 }}
@@ -135,7 +135,7 @@ function bakercards() {
                     </Card>
                 </Grid>
                 <Grid item xs={4}>
-                    <Card sx={{ height: 350, width: 350, borderRadius: 16, border: '3px solid #C27F85'}}>
+                    <Card sx={{ height: 350, width: 350, borderRadius: 10, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}}>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                             <CardMedia
                                 sx={{ width: 250, height: 250 }}
@@ -155,7 +155,7 @@ function bakercards() {
                     </Card>
                 </Grid>
                 <Grid item xs={4}>
-                    <Card sx={{ height: 350, width: 350, borderRadius: 16, border: '3px solid #C27F85'}}>
+                    <Card sx={{ height: 350, width: 350, borderRadius: 10, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}}>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                             <CardMedia
                                 sx={{ width: 250, height: 250 }}

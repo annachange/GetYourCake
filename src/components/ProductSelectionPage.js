@@ -8,8 +8,7 @@ function ProductSelectionPage() {
     <div>
       <div className="content">
         <div className="content section">
-          {/* <img src="/gyk_logo.png" className="App-logo" alt="logo" /> */}
-          <p>Select your cake specifications here</p>
+
 
             <ComboBoxAnna />
         </div>

@@ -14,20 +14,20 @@ function Switcher() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        width: "200px",
+        width: "400px",
         margin: "0 auto",
     };
 
     return (
         <div style={switchContainer}>
-            <span>{state.checked ? "Off" : "Off"}</span>
+            <span>{state.checked ? "I'll pick up myself" : "I'll pick up myself"}</span>
             <Switch
                 checked={state.checked}
                 onChange={handleChange}
                 name="checked"
                 color="primary"
             />
-            <span>{state.checked ? "On" : "On"}</span>
+            <span>{state.checked ? "Deliver to my address" : "Deliver to my address"}</span>
         </div>
     );
 }

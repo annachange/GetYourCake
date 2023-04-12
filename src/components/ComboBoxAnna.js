@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Radio from '@mui/material/Radio';
-import { Grid, Card, CardContent, CardMedia, CardHeader } from '@mui/material';
+import { Grid, CardMedia, CardHeader, Accordion, AccordionSummary, AccordionDetails, Card, CardContent, Typography } from '@mui/material';
 import FormGroup from '@mui/material/FormGroup';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import Switch from '@mui/material/Switch';
-import Typography from '@mui/material/Typography';
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
@@ -25,6 +24,7 @@ import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Slider from '@mui/material/Slider';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import CakeFlavoursSelection from "./CakeFlavoursSelection";
 import textpage from "./textpage";
@@ -43,6 +43,8 @@ import cakeimg3 from "../images/cake3.jpg";
 import cakeimg4 from "../images/cake4.jpg";
 import Switcher from "./textpage";
 import SwitcherTest from "./SwitcherTest";
+import BakerProfileSection from "./BakerProfileSection";
+import VerticalTabs from "./VerticalTabs";
 
 
 const cards = [
@@ -135,9 +137,24 @@ function ComboBoxAnna() {
 
 
     return (
-        <Grid container rowSpacing={2}>
-            <Grid item xs={6} justify="center">
-                <Card sx={{ maxWidth: 345 }}>
+
+        <>
+        <div className="container">
+        <Grid container rowSpacing={2} justify="center">
+            <Grid item xs={6} >
+                <Box
+                    borderRadius={10}
+                    border={4}
+                    borderColor="#cca2a2"
+                    p={2}
+                    sx={{
+                        width: '100%',
+                        maxWidth: 600,
+                        boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)',
+                    }}
+                    style={{ backgroundColor: '#FFFFFF' }}
+                >
+                    <Card sx={{ maxWidth: 345 }}>
                         <CardMedia
                             component="img"
                             image={cakeimg2}
@@ -145,19 +162,47 @@ function ComboBoxAnna() {
 
                         />
                     </Card>
+                </Box>
+                <Box
+                    borderRadius={10}
+                    border={4}
+                    borderColor="#cca2a2"
+                    p={2}
+                    sx={{
+                        width: '100%',
+                        maxWidth: 600,
+                        boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)',
+                    }}
+                    style={{ backgroundColor: '#FFFFFF' }}
+                >
 
 
+                    <VerticalTabs />
+                </Box>
 
                 </Grid>
                 <Grid item xs={6} >
-                    <Box  borderRadius={16} border={3} borderColor="#C27F85" p={2} sx={{ width: '100%', maxWidth: 600 }}>
+                    <Box
+                        borderRadius={10}
+                        border={4}
+                        borderColor="#cca2a2"
+                        p={2}
+                        sx={{
+                            width: '100%',
+                            maxWidth: 600,
+                            boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)',
+                        }}
+                        style={{ backgroundColor: '#FFFFFF' }}
+                    >
 
                     <div>
                         <Typography variant="h4">Cake "Fruit Selection"</Typography>
 
                     </div>
+                        <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
+                            <Chip style={{ backgroundColor: '#cca2a2', color: 'white',  width: '200px', height: '25px' }} size="large" label="CAKE SIZE (KG)" />
+                        </Divider>
                     <div className="form-section" sx={{ width: 300 }}>
-                        <Typography variant="h6">Cake size (kg)</Typography>
                         <Slider
                             aria-label="Cake sixe"
                             defaultValue={2}
@@ -175,8 +220,8 @@ function ComboBoxAnna() {
                         />
                     </div>
 
-                        <Divider sx={{ marginBottom: "10px" }}>
-                            <Chip size="large" label="Choose flavour" />
+                        <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
+                            <Chip style={{ backgroundColor: '#cca2a2', color: 'white',  width: '200px', height: '25px' }} size="large" label="CHOOSE FLAVOUR" />
                         </Divider>
                     <div className="form-section">
 
@@ -190,8 +235,8 @@ function ComboBoxAnna() {
 
 
                     </div>
-                        <Divider sx={{ marginBottom: "10px" }}>
-                            <Chip size="large" label="Delivery" />
+                        <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
+                            <Chip style={{ backgroundColor: '#cca2a2', color: 'white',  width: '200px', height: '25px' }} size="large" label="DELIVERY" />
                         </Divider>
 
                     <div className="form-section">
@@ -227,8 +272,8 @@ function ComboBoxAnna() {
 
 
                     </div>
-                        <Divider sx={{ marginBottom: "10px" }}>
-                            <Chip size="large" label="Additional Order Information" />
+                        <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
+                            <Chip style={{ backgroundColor: '#cca2a2', color: 'white',  width: '200px', height: '25px' }} size="large" label="COMMENT" />
                         </Divider>
 
 
@@ -238,16 +283,16 @@ function ComboBoxAnna() {
                             sx={{width: 400}}
                             justify="center"
                             id="standard-multiline-static"
-                            label="Additional Order Information"
+                            label="Please add comment"
                             multiline
-                            rows={4}
+                            rows={2}
                             variant="standard"
                         />
                     </div>
 
                         <div>
 
-                            <Chip label={`TOTAL PRICE IS ${calculatePrice()} EUR`} variant="outlined" />
+                            <Typography variant="h4">TOTAL PRICE IS ${calculatePrice()} EUR</Typography>
                         </div>
 
                     <div> <Button>Add to cart</Button></div>
@@ -257,9 +302,9 @@ function ComboBoxAnna() {
             </Grid>
 
 
+</div>
 
-
-
+        </>
     );
 }
 

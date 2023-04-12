@@ -55,11 +55,12 @@ function maincards() {
     };
 
     return (
-            <Grid justifyContent="center" container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+
+        <Grid justifyContent="center" container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
 
 
                     <Grid item xs={4}>
-                        <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85'}} >
+                        <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}} >
                             <CardHeader
                                 style={headerStyle}
                                 avatar={
@@ -115,7 +116,7 @@ function maincards() {
 
 
                     <Grid item xs={4}>
-                        <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85'}} >
+                        <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}} >
                             <CardHeader
                                 style={headerStyle}
                                 avatar={
@@ -167,7 +168,7 @@ function maincards() {
 
                     </Grid>
                     <Grid item xs={4}>
-                        <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85'}} >
+                        <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}} >
                             <CardHeader
                                 style={headerStyle}
                                 avatar={
@@ -219,7 +220,7 @@ function maincards() {
 
                     </Grid>
                 <Grid item xs={4}>
-                    <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85'}} >
+                    <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}} >
                         <CardHeader
                             style={headerStyle}
                             avatar={
@@ -271,7 +272,7 @@ function maincards() {
 
                 </Grid>
                 <Grid item xs={4}>
-                    <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85'}} >
+                    <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}} >
                         <CardHeader
                             style={headerStyle}
                             avatar={
@@ -323,7 +324,7 @@ function maincards() {
 
                 </Grid>
                 <Grid item xs={4}>
-                    <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85'}} >
+                    <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}} >
                         <CardHeader
                             style={headerStyle}
                             avatar={
