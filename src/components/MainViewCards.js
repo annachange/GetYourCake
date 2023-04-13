@@ -22,15 +22,16 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import Rating from '@mui/material/Rating';
+import CakeLoop from "./CakeLoop";
 
 
 
 function MainCards() {
 
     const gyc = useContext(GetYourCakeContext);  //it contains bakers and cakes
-    console.log(gyc)
-    console.log(gyc.bakers)
-    console.log(gyc.cakes)
+    // console.log(gyc)
+    // console.log(gyc.bakers)
+    // console.log(gyc.cakes)
 
     const headerStyle = {
         backgroundColor: "#cca2a2",
@@ -82,6 +83,9 @@ function MainCards() {
                                 {/*        </ImageListItem>*/}
                                 {/*    ))}*/}
                                 {/*</ImageList>*/}
+
+
+                                <CakeLoop baker={baker.id}/>
 
                             </CardContent>
                             <CardActions sx={{ justifyContent: 'center' }}>
