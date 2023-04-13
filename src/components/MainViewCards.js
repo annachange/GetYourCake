@@ -23,6 +23,7 @@ import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import Rating from '@mui/material/Rating';
 import CakeLoop from "./CakeLoop";
+import {Link} from "react-router-dom";
 
 
 
@@ -35,6 +36,10 @@ function MainCards() {
 
     const headerStyle = {
         backgroundColor: "#cca2a2",
+    };
+
+    const handleClick = () => {
+        window.scrollTo(0, 0);
     };
 
     return (
@@ -89,7 +94,7 @@ function MainCards() {
 
                             </CardContent>
                             <CardActions sx={{ justifyContent: 'center' }}>
-                                <Button>Check out all cakes</Button>
+                                <Button component={Link} to="/bakerProfilePage" onClick={handleClick}>Check out all cakes</Button>
 
                             </CardActions>
                         </Card>
