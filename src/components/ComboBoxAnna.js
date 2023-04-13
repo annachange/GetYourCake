@@ -96,18 +96,7 @@ function ComboBoxAnna(props) {
     ];
 
 
-    const weightofCake = [
-        {label: '0,5 kg', year: 1994},
-        {label: '0,8 kg', year: 1972},
-        {label: '1 kg', year: 1974},
-        {label: '1,2 kg', year: 2008},
-        {label: '1,5 kg', year: 1957},
-        {label: '1,8 kg', year: 1993},
-        {label: '2 kg', year: 1994},
-        {label: '2,3 kg', year: 2003,},
-        {label: '2,7 kg', year: 1966},
-        {label: '3 kg', year: 1999},
-    ];
+
 
 
     const handleSwitchChange = () => {
