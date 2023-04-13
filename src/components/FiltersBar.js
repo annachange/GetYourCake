@@ -3,7 +3,7 @@ import MultipleSelectChip from './MultipleSelectChip';
 import MultipleSelectCheckmarks from './MultipleSelectCheckmarks';
 import TextField from '@mui/material/TextField';
 import Grid from "@mui/material/Grid";
-function NavbarFirstPage() {
+function FiltersBar() {
 
 
     return (
@@ -27,4 +27,4 @@ function NavbarFirstPage() {
 
     )
 }
-export default NavbarFirstPage;
+export default FiltersBar;

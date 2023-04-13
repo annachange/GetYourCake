@@ -101,7 +101,9 @@ root.render(
 
       {/*<RouterProvider router={router} />*/}
       <BrowserRouter >
+
         <App />
+
       </BrowserRouter>
 
     </ThemeProvider>

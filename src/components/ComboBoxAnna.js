@@ -292,7 +292,7 @@ function ComboBoxAnna() {
 
                         <div>
 
-                            <Typography variant="h4">TOTAL PRICE IS ${calculatePrice()} EUR</Typography>
+                            <Typography variant="h4">TOTAL PRICE IS {calculatePrice()} EUR</Typography>
                         </div>
 
                     <div> <Button>Add to cart</Button></div>
