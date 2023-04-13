@@ -101,8 +101,8 @@ function App() {
                             <Routes>
                                 <Route path="/" element={ <Home/> } />
 
-                                <Route path="bakerProfilePage" element={ <BakerProfilePage />} />
-                                <Route path="productSelectionPage" element={ <ProductSelectionPage />} />
+                                <Route path="bakerProfilePage/:id" element={ <BakerProfilePage />} />
+                                <Route path="productSelectionPage/:cakeid" element={ <ProductSelectionPage />} />
 
                                 <Route exact path='profile' element={
                                     <PrivateRoute>

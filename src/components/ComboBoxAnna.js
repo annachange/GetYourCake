@@ -62,7 +62,7 @@ function valuetext(value) {
     return `${value}°C`;
 }
 
-function ComboBoxAnna() {
+function ComboBoxAnna(props) {
     const [isSwitchOn, setIsSwitchOn] = useState(false);
     const [address, setAddress] = useState('');
 
@@ -154,11 +154,11 @@ function ComboBoxAnna() {
                     }}
                     style={{ backgroundColor: '#FFFFFF' }}
                 >
-                    <Card sx={{ maxWidth: 345 }}>
+                    <Card sx={{ maxWidth: 345 }} elevation={0}>
                         <CardMedia
                             component="img"
-                            image={cakeimg2}
-                            alt="My Image"
+                            image={props.cake.picture_path}
+                            alt={props.cake.name}
 
                         />
                     </Card>
@@ -177,7 +177,7 @@ function ComboBoxAnna() {
                 >
 
 
-                    <VerticalTabs />
+                    <VerticalTabs baker={props.baker} cake={props.cake}/>
                 </Box>
 
                 </Grid>
@@ -196,7 +196,7 @@ function ComboBoxAnna() {
                     >
 
                     <div>
-                        <Typography variant="h4">Cake "Fruit Selection"</Typography>
+                        <Typography variant="h4">{props.cake.name}</Typography>
 
                     </div>
                         <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>

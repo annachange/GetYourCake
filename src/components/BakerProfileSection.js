@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 import personimg1 from '../images/person1.jpg';
 
 
-function BakerProfileSection() {
+function BakerProfileSection(props) {
     const headerStyle = {
         backgroundColor: "#cca2a2",
     };
@@ -26,28 +26,26 @@ function BakerProfileSection() {
                     avatar={
                         <Avatar
                             alt="Remy Sharp"
-                            src={personimg1}
+                            src={props.baker.profilepicturepath}
                             sx={{ width: 150, height: 150 }}
                         />
                     }
                     title={
                         <>
-                            Maria's Bakery&nbsp;
-                            <Rating name="example-rating" value={3} readOnly />
+                        {props.baker.name}
+                            <Rating name="example-rating" value={props.baker.rating} readOnly />
                         </>
                     }
-                    subheader="Mustamäe, Tallinn"
+                    subheader={props.baker.location}
                 ></CardHeader>
 
                 <CardContent>
 
                 </CardContent>
                 <CardActions>
-                    <p>20 years of experience in baking. <br /> Make sure to place your order at least 24h before!</p>
+                    {props.baker.overview}
                 </CardActions>
-                <CardActions>
-                    <p></p>
-                </CardActions>
+
             </Card>
         </Box>
 

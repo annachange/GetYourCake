@@ -20,10 +20,11 @@ function CakeLoop(props) {
 
     return (
         <ImageList sx={{ width: 380, height: 500 }}>
-        {bakerscakes.map((cake, index) => (
+        {bakerscakes.map((cake, index) => {
 
-            //  this part has to become clickable
-            <ImageListItem key={index} component={Link} to="/ProductSelectionPage" onClick={handleClick}>
+            let url = 'ProductSelectionPage/'+ cake.id;
+
+           return ( <ImageListItem key={index} component={Link} to={url} onClick={handleClick}>
                 <img
                     src={cake.picture_path}
                     srcSet={`${cake.picture_path}?w=248&fit=crop&auto=format&dpr=2 2x`}
@@ -34,8 +35,8 @@ function CakeLoop(props) {
                     title={cake.name}
                     position="below"
                 />
-            </ImageListItem>
-        ))}
+            </ImageListItem>)
+        })}
     </ImageList>
     )
 }

@@ -24,6 +24,8 @@ const locations = [
     'Tallinn',
     'Tartu',
     'Pärnu',
+    'Viljandi',
+    'Narva',
     // 'Harjumaa',
     // 'Hiiumaa',
     // 'Ida-Virumaa',
