@@ -19,7 +19,7 @@ function CakeLoop(props) {
 
 
     return (
-        <ImageList sx={{ width: 380, height: 500 }}>
+        <ImageList s={4} sx={{ justify: 'center'}}>
         {bakerscakes.map((cake, index) => {
 
             let url = 'ProductSelectionPage/'+ cake.id;
@@ -31,10 +31,10 @@ function CakeLoop(props) {
                     alt={cake.name}
                     loading="lazy"
                 />
-                <ImageListItemBar
+                {/*<ImageListItemBar
                     title={cake.name}
                     position="below"
-                />
+                />*/}
             </ImageListItem>)
         })}
     </ImageList>

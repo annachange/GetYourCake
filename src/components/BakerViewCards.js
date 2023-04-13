@@ -15,7 +15,7 @@ function BakerCards(props) {
     };
 
     return (
-            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}  sx={{ padding: '50px', justify: 'center'}}>
+            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}  sx={{ padding: '30px', justify: 'center'}}>
 
                 {props.cakes.map((cake, index) => {
 
@@ -32,13 +32,13 @@ function BakerCards(props) {
                                 title={cake.name}
                             />
                             <CardContent>
-                                <Typography variant="h6" style={{ margin: '-20px' }}>
+                                <Typography variant="h6" style={{ margin: '-15px' }}>
                                     {cake.name}
                                 </Typography>
 
                             </CardContent>
                             <CardActions>
-                                <Button size="small" component={Link} to={url} onClick={handleClick}>Order</Button>
+                                <Button size="small" component={Link} to={url} onClick={handleClick}>ORDER</Button>
                             </CardActions>
                         </div>
                     </Card>

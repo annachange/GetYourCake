@@ -73,7 +73,7 @@ const theme = createTheme({
           props: { variant: "my_button" },
           style: {
             textTransform: "none",
-            border: `1px solid #ffffff`,
+            border: `1px solid #cca2a2`,
             fontSize: "1rem",
             transition: "font-size 0.2s ease-in-out",
             backgroundColor: "#EDD9DB", // Change the background color

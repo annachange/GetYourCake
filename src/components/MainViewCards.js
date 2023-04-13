@@ -35,22 +35,29 @@ function MainCards() {
 
     const headerStyle = {
         backgroundColor: "#cca2a2",
+        fontSize: "1rem",
+        transition: "font-size 0.2s ease-in-out",
+        textTransform: "none",
+
+        color: "#f8f7f8"
     };
 
     const handleClick = () => {
         window.scrollTo(0, 0);
     };
 
-    return (
 
-        <Grid justifyContent="center" container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+
+        return (
+
+        <Grid sx={{ padding: '0 100px' }} justifyContent="center" container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
 
             {gyc.bakers.map((baker, index) => {
 
                 let url = 'bakerProfilePage/'+ baker.id
                 return (
                     <Grid item xs={4} key={index}>
-                        <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}} >
+                        <Card sx={{ borderRadius: 16, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}} >
                             <CardHeader
                                 style={headerStyle}
                                 avatar={
@@ -58,81 +65,39 @@ function MainCards() {
                                             src={baker.profilepicturepath}
                                             sx={{ width: 100, height: 100 }}/>
                                 }
-
                                 title={
-
-                                        <div>
-                                            <Typography variant="h6" component="div">
-                                                {baker.name} from  {baker.location}
-                                            </Typography>
-                                        </div>
-
-                                }
-                                subheader={
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <StyledRating
-                                            name="example-rating"
-                                            value={baker.rating}
-                                            precision={0.5}
-                                            readOnly
-                                            getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                                            icon={<CakeIcon fontSize="inherit" />}
-                                            emptyIcon={<CakeOutlinedIcon fontSize="inherit" />}
-                                        />
-
-
+                                    <div>
+                                        <Typography variant="h6" component="div">
+                                            <strong> {baker.name} from {baker.location}</strong>
+                                        </Typography>
                                     </div>
                                 }
+                                subheader={
+                                    <StyledRating
+                                        size='small'
+                                        name="example-rating"
+                                        value={baker.rating}
+                                        precision={0.5}
+                                        readOnly
+                                        getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                                        icon={<CakeIcon fontSize="inherit" />}
+                                        emptyIcon={<CakeOutlinedIcon fontSize="inherit" />}
+                                    />
+                                }
 
-                                // action={
-                                //
-                                //     <div style={{ display: 'flex', justifyContent: 'center' }}>
-                                //
-                                // <StyledRating
-                                //
-                                //     name="example-rating"
-                                //     value={baker.rating}
-                                //     precision={0.5}
-                                //     readOnly
-                                //     getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                                //     icon={<CakeIcon fontSize="inherit" />}
-                                //     emptyIcon={<CakeOutlinedIcon fontSize="inherit" />}
-                                //
-                                // /> </div>
-                                //
-                                //
-                                //     }
                             >
                             </CardHeader>
 
 
 
 
-                            <CardContent sx={{ width: 380, height: 470 }}>
-                                {/*<ImageList sx={{ width: 380, height: 500 }}>*/}
-                                {/*    {cakes.map((item) => (*/}
-                                {/*        <ImageListItem key={item.src}>*/}
-                                {/*            <img*/}
-                                {/*                src={`${item.src}?w=248&fit=crop&auto=format`}*/}
-                                {/*                srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}*/}
-                                {/*                alt={item.title}*/}
-                                {/*                loading="lazy"*/}
-                                {/*            />*/}
-                                {/*            <ImageListItemBar*/}
-                                {/*                title={item.title}*/}
-                                {/*                subtitle={item.description}*/}
-                                {/*                position="below"*/}
-                                {/*            />*/}
-                                {/*        </ImageListItem>*/}
-                                {/*    ))}*/}
-                                {/*</ImageList>*/}
+                            <CardContent >
 
-
-                                <CakeLoop baker={baker.id}/>
+                                <div sx={{ justify: 'center', margin: '-20px'}}><CakeLoop baker={baker.id}/></div>
 
                             </CardContent>
                             <CardActions sx={{ justifyContent: 'center' }}>
-                                <Button component={Link} to={url} onClick={handleClick}>Check out all cakes</Button>
+                                <Button component={Link} to={url} onClick={handleClick} sx={{  marginBottom: '10px', marginTop: '-20px' }}>SEE ALL CAKES</Button>
 
                             </CardActions>
                         </Card>
@@ -145,268 +110,6 @@ function MainCards() {
 
 
 
-
-
-                {/*    <Grid item xs={4}>*/}
-                {/*        <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}} >*/}
-                {/*            <CardHeader*/}
-                {/*                style={headerStyle}*/}
-                {/*                avatar={*/}
-                {/*                    <Avatar alt="Remy Sharp"*/}
-                {/*                            src={personimg1}*/}
-                {/*                            sx={{ width: 100, height: 100 }}/>*/}
-                {/*                }*/}
-                {/*                title={*/}
-                {/*                    <>*/}
-                {/*                        Person 6&nbsp;*/}
-                {/*                        <Rating name="example-rating" value={3} readOnly />*/}
-                {/*                    </>*/}
-                {/*                }*/}
-                {/*                subheader="Mustamäe, Tallinn"*/}
-                {/*            >*/}
-                {/*            </CardHeader>*/}
-
-
-
-
-                {/*            <CardContent sx={{ width: 380, height: 470 }}>*/}
-                {/*                <ImageList sx={{ width: 380, height: 500 }}>*/}
-                {/*                    {cakes.map((item) => (*/}
-                {/*                        <ImageListItem key={item.src}>*/}
-                {/*                            <img*/}
-                {/*                                src={`${item.src}?w=248&fit=crop&auto=format`}*/}
-                {/*                                srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}*/}
-                {/*                                alt={item.title}*/}
-                {/*                                loading="lazy"*/}
-                {/*                            />*/}
-                {/*                            <ImageListItemBar*/}
-                {/*                                title={item.title}*/}
-                {/*                                subtitle={item.description}*/}
-                {/*                                position="below"*/}
-                {/*                            />*/}
-                {/*                        </ImageListItem>*/}
-                {/*                    ))}*/}
-                {/*                </ImageList>*/}
-
-
-
-
-                {/*            </CardContent>*/}
-                {/*            <CardActions sx={{ justifyContent: 'center' }}>*/}
-                {/*                <Button>Check out all cakes</Button>*/}
-
-                {/*            </CardActions>*/}
-                {/*        </Card>*/}
-
-                {/*    </Grid>*/}
-                {/*    <Grid item xs={4}>*/}
-                {/*        <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}} >*/}
-                {/*            <CardHeader*/}
-                {/*                style={headerStyle}*/}
-                {/*                avatar={*/}
-                {/*                    <Avatar alt="Remy Sharp"*/}
-                {/*                            src={personimg1}*/}
-                {/*                            sx={{ width: 100, height: 100 }}/>*/}
-                {/*                }*/}
-                {/*                title={*/}
-                {/*                    <>*/}
-                {/*                        Person 6&nbsp;*/}
-                {/*                        <Rating name="example-rating" value={3} readOnly />*/}
-                {/*                    </>*/}
-                {/*                }*/}
-                {/*                subheader="Mustamäe, Tallinn"*/}
-                {/*            >*/}
-                {/*            </CardHeader>*/}
-
-
-
-
-                {/*            <CardContent sx={{ width: 380, height: 470 }}>*/}
-                {/*                <ImageList sx={{ width: 380, height: 500 }}>*/}
-                {/*                    {cakes.map((item) => (*/}
-                {/*                        <ImageListItem key={item.src}>*/}
-                {/*                            <img*/}
-                {/*                                src={`${item.src}?w=248&fit=crop&auto=format`}*/}
-                {/*                                srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}*/}
-                {/*                                alt={item.title}*/}
-                {/*                                loading="lazy"*/}
-                {/*                            />*/}
-                {/*                            <ImageListItemBar*/}
-                {/*                                title={item.title}*/}
-                {/*                                subtitle={item.description}*/}
-                {/*                                position="below"*/}
-                {/*                            />*/}
-                {/*                        </ImageListItem>*/}
-                {/*                    ))}*/}
-                {/*                </ImageList>*/}
-
-
-
-
-                {/*            </CardContent>*/}
-                {/*            <CardActions sx={{ justifyContent: 'center' }}>*/}
-                {/*                <Button>Check out all cakes</Button>*/}
-
-                {/*            </CardActions>*/}
-                {/*        </Card>*/}
-
-                {/*    </Grid>*/}
-                {/*<Grid item xs={4}>*/}
-                {/*    <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}} >*/}
-                {/*        <CardHeader*/}
-                {/*            style={headerStyle}*/}
-                {/*            avatar={*/}
-                {/*                <Avatar alt="Remy Sharp"*/}
-                {/*                        src={personimg1}*/}
-                {/*                        sx={{ width: 100, height: 100 }}/>*/}
-                {/*            }*/}
-                {/*            title={*/}
-                {/*                <>*/}
-                {/*                    Person 6&nbsp;*/}
-                {/*                    <Rating name="example-rating" value={3} readOnly />*/}
-                {/*                </>*/}
-                {/*            }*/}
-                {/*            subheader="Mustamäe, Tallinn"*/}
-                {/*        >*/}
-                {/*        </CardHeader>*/}
-
-
-
-
-                {/*        <CardContent sx={{ width: 380, height: 470 }}>*/}
-                {/*            <ImageList sx={{ width: 380, height: 500 }}>*/}
-                {/*                {cakes.map((item) => (*/}
-                {/*                    <ImageListItem key={item.src}>*/}
-                {/*                        <img*/}
-                {/*                            src={`${item.src}?w=248&fit=crop&auto=format`}*/}
-                {/*                            srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}*/}
-                {/*                            alt={item.title}*/}
-                {/*                            loading="lazy"*/}
-                {/*                        />*/}
-                {/*                        <ImageListItemBar*/}
-                {/*                            title={item.title}*/}
-                {/*                            subtitle={item.description}*/}
-                {/*                            position="below"*/}
-                {/*                        />*/}
-                {/*                    </ImageListItem>*/}
-                {/*                ))}*/}
-                {/*            </ImageList>*/}
-
-
-
-
-                {/*        </CardContent>*/}
-                {/*        <CardActions sx={{ justifyContent: 'center' }}>*/}
-                {/*            <Button>Check out all cakes</Button>*/}
-
-                {/*        </CardActions>*/}
-                {/*    </Card>*/}
-
-                {/*</Grid>*/}
-                {/*<Grid item xs={4}>*/}
-                {/*    <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}} >*/}
-                {/*        <CardHeader*/}
-                {/*            style={headerStyle}*/}
-                {/*            avatar={*/}
-                {/*                <Avatar alt="Remy Sharp"*/}
-                {/*                        src={personimg1}*/}
-                {/*                        sx={{ width: 100, height: 100 }}/>*/}
-                {/*            }*/}
-                {/*            title={*/}
-                {/*                <>*/}
-                {/*                    Person 6&nbsp;*/}
-                {/*                    <Rating name="example-rating" value={3} readOnly />*/}
-                {/*                </>*/}
-                {/*            }*/}
-                {/*            subheader="Mustamäe, Tallinn"*/}
-                {/*        >*/}
-                {/*        </CardHeader>*/}
-
-
-
-
-                {/*        <CardContent sx={{ width: 380, height: 470 }}>*/}
-                {/*            <ImageList sx={{ width: 380, height: 500 }}>*/}
-                {/*                {cakes.map((item) => (*/}
-                {/*                    <ImageListItem key={item.src}>*/}
-                {/*                        <img*/}
-                {/*                            src={`${item.src}?w=248&fit=crop&auto=format`}*/}
-                {/*                            srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}*/}
-                {/*                            alt={item.title}*/}
-                {/*                            loading="lazy"*/}
-                {/*                        />*/}
-                {/*                        <ImageListItemBar*/}
-                {/*                            title={item.title}*/}
-                {/*                            subtitle={item.description}*/}
-                {/*                            position="below"*/}
-                {/*                        />*/}
-                {/*                    </ImageListItem>*/}
-                {/*                ))}*/}
-                {/*            </ImageList>*/}
-
-
-
-
-                {/*        </CardContent>*/}
-                {/*        <CardActions sx={{ justifyContent: 'center' }}>*/}
-                {/*            <Button>Check out all cakes</Button>*/}
-
-                {/*        </CardActions>*/}
-                {/*    </Card>*/}
-
-                {/*</Grid>*/}
-                {/*<Grid item xs={4}>*/}
-                {/*    <Card sx={{ maxWidth: 400, borderRadius: 16, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}} >*/}
-                {/*        <CardHeader*/}
-                {/*            style={headerStyle}*/}
-                {/*            avatar={*/}
-                {/*                <Avatar alt="Remy Sharp"*/}
-                {/*                        src={personimg1}*/}
-                {/*                        sx={{ width: 100, height: 100 }}/>*/}
-                {/*            }*/}
-                {/*            title={*/}
-                {/*                <>*/}
-                {/*                    Person 6&nbsp;*/}
-                {/*                    <Rating name="example-rating" value={3} readOnly />*/}
-                {/*                </>*/}
-                {/*            }*/}
-                {/*            subheader="Mustamäe, Tallinn"*/}
-                {/*        >*/}
-                {/*        </CardHeader>*/}
-
-
-
-
-                {/*        <CardContent sx={{ width: 380, height: 470 }}>*/}
-                {/*            <ImageList sx={{ width: 380, height: 500 }}>*/}
-                {/*                {cakes.map((item) => (*/}
-                {/*                    <ImageListItem key={item.src}>*/}
-                {/*                        <img*/}
-                {/*                            src={`${item.src}?w=248&fit=crop&auto=format`}*/}
-                {/*                            srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}*/}
-                {/*                            alt={item.title}*/}
-                {/*                            loading="lazy"*/}
-                {/*                        />*/}
-                {/*                        <ImageListItemBar*/}
-                {/*                            title={item.title}*/}
-                {/*                            subtitle={item.description}*/}
-                {/*                            position="below"*/}
-                {/*                        />*/}
-                {/*                    </ImageListItem>*/}
-                {/*                ))}*/}
-                {/*            </ImageList>*/}
-
-
-
-
-                {/*        </CardContent>*/}
-                {/*        <CardActions sx={{ justifyContent: 'center' }}>*/}
-                {/*            <Button>Check out all cakes</Button>*/}
-
-                {/*        </CardActions>*/}
-                {/*    </Card>*/}
-
-                {/*</Grid>*/}
 
             </Grid>
 
