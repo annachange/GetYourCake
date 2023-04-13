@@ -60,7 +60,6 @@ function bakercards() {
                             <CardMedia
                                 sx={{ width: 250, height: 250 }}
                                 image={cakeimg1}
-                                title="green iguana"
                             />
                             <CardContent>
                                 <Typography variant="h5" component="div">
@@ -80,7 +79,6 @@ function bakercards() {
                             <CardMedia
                                 sx={{ width: 250, height: 250 }}
                                 image={cakeimg1}
-                                title="green iguana"
                             />
                             <CardContent>
                                 <Typography variant="h5" component="div">
@@ -100,7 +98,6 @@ function bakercards() {
                             <CardMedia
                                 sx={{ width: 250, height: 250 }}
                                 image={cakeimg1}
-                                title="green iguana"
                             />
                             <CardContent>
                                 <Typography variant="h5" component="div">
@@ -120,7 +117,6 @@ function bakercards() {
                             <CardMedia
                                 sx={{ width: 250, height: 250 }}
                                 image={cakeimg1}
-                                title="green iguana"
                             />
                             <CardContent>
                                 <Typography variant="h5" component="div">
@@ -140,7 +136,6 @@ function bakercards() {
                             <CardMedia
                                 sx={{ width: 250, height: 250 }}
                                 image={cakeimg1}
-                                title="green iguana"
                             />
                             <CardContent>
                                 <Typography variant="h5" component="div">
@@ -160,7 +155,6 @@ function bakercards() {
                             <CardMedia
                                 sx={{ width: 250, height: 250 }}
                                 image={cakeimg1}
-                                title="green iguana"
                             />
                             <CardContent>
                                 <Typography variant="h5" component="div">

@@ -6,9 +6,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import BakerProfilePage from "./components/BakerProfilePage";
 import ProductSelectionPage from "./components/ProductSelectionPage";
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-
 
 // const router = createBrowserRouter([
 //   {
@@ -89,8 +88,6 @@ const theme = createTheme({
         // Other variants
       ],
     },
-
-
   },
 });
 
@@ -98,12 +95,10 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-
       {/*<RouterProvider router={router} />*/}
-      <BrowserRouter >
+      <BrowserRouter>
         <App />
       </BrowserRouter>
-
     </ThemeProvider>
   </React.StrictMode>
 );

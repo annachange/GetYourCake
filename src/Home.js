@@ -1,5 +1,5 @@
 import React from "react";
-import NavbarFirstPage from './components/NavbarFirstPage';
+import FiltersBar from './components/FiltersBar';
 import MainViewCards from "./components/MainViewCards";
 // import MainViewCardsTest from './MainViewCardsTest';
 //import UserLogin from './UserLogin';
@@ -18,7 +18,7 @@ function Home() {
     return (
         // <div className="content section">
         <Box sx={{pl:2, pr:2}}>
-            <NavbarFirstPage/>
+            <FiltersBar/>
             <MainViewCards />
 
 

@@ -14,7 +14,7 @@ import {onAuthStateChanged} from 'firebase/auth';
 import PrivateRoute from './PrivateRoute';
 
 
-// import NavbarFirstPage from './components/NavbarFirstPage';
+// import FiltersBar from './components/FiltersBar';
 // import MainViewCards from "./components/MainViewCards";
 //import UserLogin from './UserLogin';
 
@@ -49,7 +49,7 @@ function App() {
                 <div className="content">
                     {/* Put your page content here */}
                     {/*<div className="content section">*/}
-                    {/*    <NavbarFirstPage/>*/}
+                    {/*    <FiltersBar/>*/}
                     {/*    <MainViewCards />*/}
 
 
