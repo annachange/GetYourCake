@@ -1,14 +1,21 @@
 import React, { useState } from "react";
 import Switch from "@mui/material/Switch";
+import TextField from "@mui/material/TextField";
 
 function Switcher() {
     const [state, setState] = useState({
         checked: false,
+        address: "",
     });
 
     const handleChange = (event) => {
-        setState({ ...state, [event.target.name]: event.target.checked });
+        setState({
+            ...state,
+            checked: event.target.checked,
+            address: event.target.checked ? "" : state.address,
+        });
     };
+
 
     const switchContainer = {
         display: "flex",
@@ -19,7 +26,10 @@ function Switcher() {
     };
 
     return (
-        <div style={switchContainer}>
+       <div>
+
+
+           <div style={switchContainer}>
             <span>{state.checked ? "I'll pick up myself" : "I'll pick up myself"}</span>
             <Switch
                 checked={state.checked}
@@ -29,7 +39,24 @@ function Switcher() {
             />
             <span>{state.checked ? "Deliver to my address" : "Deliver to my address"}</span>
         </div>
-    );
+
+
+            {state.checked && (
+                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '14px' }}>
+
+                <TextField
+                        label="Please specify address"
+                        variant="outlined"
+                        size="small"
+                        value={state.address}
+                        onChange={(event) =>
+                            setState({ ...state, address: event.target.value })
+                        }
+                    />
+                </div>
+            )}
+</div>
+);
 }
 
 export default Switcher;

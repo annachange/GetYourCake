@@ -35,14 +35,9 @@ function Navigation(props) {
           </Link>
         </div>
         <div className="navbar-buttons">
-          <Button component={Link} to="/bakerProfilePage">
-            DISCOVER BAKER
-          </Button>
-          <Button component={Link} to="/ProductSelectionPage">
-            ORDER CAKE
-          </Button>
+          <Button component={Link} to="/">MAIN PAGE</Button>
           {currentUser === null &&
-            <Button onClick={() => navigate("login")}> LOG IN </Button>
+            <Button onClick={() => navigate("login")}>BAKER LOG IN</Button>
           }
           {currentUser !== null &&
             <Button onClick={() => signOut(auth)}>SIGN OUT</Button>

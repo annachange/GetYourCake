@@ -62,7 +62,7 @@ function valuetext(value) {
     return `${value}°C`;
 }
 
-function ComboBoxAnna() {
+function ComboBoxAnna(props) {
     const [isSwitchOn, setIsSwitchOn] = useState(false);
     const [address, setAddress] = useState('');
 
@@ -96,18 +96,7 @@ function ComboBoxAnna() {
     ];
 
 
-    const weightofCake = [
-        {label: '0,5 kg', year: 1994},
-        {label: '0,8 kg', year: 1972},
-        {label: '1 kg', year: 1974},
-        {label: '1,2 kg', year: 2008},
-        {label: '1,5 kg', year: 1957},
-        {label: '1,8 kg', year: 1993},
-        {label: '2 kg', year: 1994},
-        {label: '2,3 kg', year: 2003,},
-        {label: '2,7 kg', year: 1966},
-        {label: '3 kg', year: 1999},
-    ];
+
 
 
     const handleSwitchChange = () => {
@@ -154,11 +143,11 @@ function ComboBoxAnna() {
                     }}
                     style={{ backgroundColor: '#FFFFFF' }}
                 >
-                    <Card sx={{ maxWidth: 345 }}>
+                    <Card sx={{ maxWidth: 345 }} elevation={0}>
                         <CardMedia
                             component="img"
-                            image={cakeimg2}
-                            alt="My Image"
+                            image={props.cake.picture_path}
+                            alt={props.cake.name}
 
                         />
                     </Card>
@@ -177,7 +166,7 @@ function ComboBoxAnna() {
                 >
 
 
-                    <VerticalTabs />
+                    <VerticalTabs baker={props.baker} cake={props.cake}/>
                 </Box>
 
                 </Grid>
@@ -196,7 +185,7 @@ function ComboBoxAnna() {
                     >
 
                     <div>
-                        <Typography variant="h4">Cake "Fruit Selection"</Typography>
+                        <Typography variant="h4">{props.cake.name}</Typography>
 
                     </div>
                         <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
@@ -215,13 +204,13 @@ function ComboBoxAnna() {
                             color="secondary"
                             sx={{width: 400}}
                             marks={marks}
-                            valueLabelDisplay="on"
+
                             onChange={(event, value) => setSelectedCakeSize(value)}
                         />
                     </div>
 
                         <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
-                            <Chip style={{ backgroundColor: '#cca2a2', color: 'white',  width: '200px', height: '25px' }} size="large" label="CHOOSE FLAVOUR" />
+                            <Chip style={{ backgroundColor: '#cca2a2', color: 'white',  width: '200px', height: '25px' }} size="large" label="FLAVOUR" />
                         </Divider>
                     <div className="form-section">
 
@@ -244,31 +233,7 @@ function ComboBoxAnna() {
 
 
                         <SwitcherTest />
-                        <FormControlLabel
 
-                            control={
-                                <Switch
-                                    checked={isSwitchOn}
-                                    onChange={handleSwitchChange}
-                                    name="hasAddress"
-                                    color="primary"
-                                />
-                            }
-                            label='Yes'
-                        />
-                        {isSwitchOn && (
-                            <div style={{ display: "flex", alignItems: "center" }}>
-
-                            <TextField
-                                sx={{width: 400}}
-                                justify="center"
-                                label="Please specify address"
-                                variant="outlined"
-                                value={address}
-                                onChange={handleAddressChange}
-                            />
-                            </div>
-                        )}
 
 
                     </div>
@@ -291,7 +256,6 @@ function ComboBoxAnna() {
                     </div>
 
                         <div>
-
                             <Typography variant="h4">TOTAL PRICE IS {calculatePrice()} EUR</Typography>
                         </div>
 
