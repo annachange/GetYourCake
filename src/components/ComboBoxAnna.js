@@ -204,13 +204,13 @@ function ComboBoxAnna(props) {
                             color="secondary"
                             sx={{width: 400}}
                             marks={marks}
-                            valueLabelDisplay="on"
+
                             onChange={(event, value) => setSelectedCakeSize(value)}
                         />
                     </div>
 
                         <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
-                            <Chip style={{ backgroundColor: '#cca2a2', color: 'white',  width: '200px', height: '25px' }} size="large" label="CHOOSE FLAVOUR" />
+                            <Chip style={{ backgroundColor: '#cca2a2', color: 'white',  width: '200px', height: '25px' }} size="large" label="FLAVOUR" />
                         </Divider>
                     <div className="form-section">
 
@@ -233,31 +233,7 @@ function ComboBoxAnna(props) {
 
 
                         <SwitcherTest />
-                        <FormControlLabel
 
-                            control={
-                                <Switch
-                                    checked={isSwitchOn}
-                                    onChange={handleSwitchChange}
-                                    name="hasAddress"
-                                    color="primary"
-                                />
-                            }
-                            label='Yes'
-                        />
-                        {isSwitchOn && (
-                            <div style={{ display: "flex", alignItems: "center" }}>
-
-                            <TextField
-                                sx={{width: 400}}
-                                justify="center"
-                                label="Please specify address"
-                                variant="outlined"
-                                value={address}
-                                onChange={handleAddressChange}
-                            />
-                            </div>
-                        )}
 
 
                     </div>
@@ -280,7 +256,6 @@ function ComboBoxAnna(props) {
                     </div>
 
                         <div>
-
                             <Typography variant="h4">TOTAL PRICE IS {calculatePrice()} EUR</Typography>
                         </div>
 

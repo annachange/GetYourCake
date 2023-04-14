@@ -43,7 +43,7 @@ function ColorToggleButton() {
             exclusive
             onChange={handleAlignment}
             aria-label="Platform"
-            sx={{  marginTop: '20px',  border: '2px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0,15)'}}
+            sx={{  marginTop: '40px',  border: '2px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0,15)'}}
         >
             <ToggleButton value="ALL CAKES">ALL CAKES</ToggleButton>
             <ToggleButton value="CHILDREN">CHILDREN</ToggleButton>

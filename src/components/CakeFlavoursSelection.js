@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Radio, RadioGroup, FormControlLabel} from '@mui/material';
+import { Radio, RadioGroup, FormControlLabel } from '@mui/material';
 import image1 from '../images/image1.jpg';
 import image2 from '../images/image2.jpg';
 import image3 from '../images/image3.jpg';
@@ -14,15 +14,15 @@ const imgStyle = {
 };
 
 const images = [
-    { id: 'image1', src: image1, description: 'Description 1' },
-    { id: 'image2', src: image2, description: 'Description 2' },
-    { id: 'image3', src: image3, description: 'Description 3' },
-    { id: 'image4', src: image4, description: 'Description 4' },
-    { id: 'image5', src: image5, description: 'Description 5' },
+    { id: 'image1', src: image1, description: 'Pistachio' },
+    { id: 'image2', src: image2, description: 'Rafaello' },
+    { id: 'image3', src: image3, description: 'Red Velvet' },
+    { id: 'image4', src: image4, description: 'Snickers' },
+    { id: 'image5', src: image5, description: 'Chocolate' },
 ];
 
 function ImageRadioButtons() {
-    const [selectedValue, setSelectedValue] = useState(images[0].id);
+    const [selectedValue, setSelectedValue] = useState(null);
     const [selectedImage, setSelectedImage] = useState(null);
 
     const handleSelection = (event) => {
@@ -34,20 +34,28 @@ function ImageRadioButtons() {
     };
 
     return (
-        <RadioGroup value={selectedValue} onChange={handleSelection}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '1px' }}>
-                {images.map((image) => (
-                    <div key={image.id} onClick={() => handleImageClick(image)}>
-                        <FormControlLabel
-                            value={image.id}
-                            control={<Radio />}
-                            labelPlacement="top"
-                            label={<img src={image.src} alt={image.id} style={imgStyle} />}
-                        />
-                    </div>
-                ))}
-            </div>
-        </RadioGroup>
+        <div>
+
+            <RadioGroup value={selectedValue} onChange={handleSelection}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '1px' }}>
+                    {images.map((image) => (
+                        <div key={image.id} onClick={() => handleImageClick(image)}>
+                            <FormControlLabel
+                                value={image.id}
+                                control={<Radio />}
+                                labelPlacement="top"
+                                label={<img src={image.src} alt={image.id} style={imgStyle} />}
+                            />
+                        </div>
+                    ))}
+                </div>
+            </RadioGroup>
+            {selectedImage && (
+                <div style={{ marginTop: '2px' }}>
+                    <p style={{ color: '#cca2a2' }}>{selectedImage.description}</p>
+                </div>
+            )}
+        </div>
     );
 }
 

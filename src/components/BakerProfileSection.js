@@ -11,12 +11,12 @@ import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
 import personimg1 from "../images/person1.jpg";
 import personimg2 from "../images/person2.jpg";
-import Divider from "@mui/material/Divider";
 import Chip from "@mui/material/Chip";
 import CakeIcon from "@mui/icons-material/Cake";
 import CakeOutlinedIcon from "@mui/icons-material/CakeOutlined";
 import {styled} from "@mui/material/styles";
 
+import { Carousel } from 'react-bootstrap';
 
 
 const StyledRating = styled(Rating)({
@@ -40,11 +40,12 @@ function BakerProfileSection() {
 
     return (
 
-            <Grid container rowSpacing={2} justify="center">
-<
-                    <Grid item xs={6}>
+            <Grid container justify="center">
 
-                        <Card
+                    <Grid item xs={6}
+                    >
+
+                        <Card sx={{ borderRadius: 10, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)',  marginLeft: "200px", marginRight: "1px", marginTop: "30px", height: '330px' }} elevation={0}
                         >
                             <CardHeader
                                 style={headerStyle}
@@ -80,55 +81,54 @@ function BakerProfileSection() {
                                 With 15+ years of experience, I'm a passionate baker dedicated to creating delicious and beautiful baked goods. For the best quality, please place your order at least 24 hours in advance.
 
                             </CardContent>
-                            <CardActions justify="center"><Chip style={{ backgroundColor: '#cca2a2', color: 'white', height: '25px' }} size="large" label="gluten free" /> <Chip style={{ backgroundColor: '#cca2a2', color: 'white', height: '25px' }} size="large" label="lactose free" /> <Chip style={{ backgroundColor: '#cca2a2', color: 'white', height: '25px' }} size="large" label="vegan" />
+                            <CardActions style={{ display: 'flex', justifyContent: 'center' }}>
+                                <Chip style={{ backgroundColor: '#cca2a2', color: 'white', height: '25px' }} size="large" label="gluten free" />
+                                <Chip style={{ backgroundColor: '#cca2a2', color: 'white', height: '25px' }} size="large" label="lactose free" />
+                                <Chip style={{ backgroundColor: '#cca2a2', color: 'white', height: '25px' }} size="large" label="vegan" />
                             </CardActions>
 
                         </Card>
                     </Grid>
 
                 <Grid item xs={6} >
-                    <Box
-
-                        sx={{
-                            width: '100%',
-                            maxWidth: 600,
-
-                        }}
-                        style={{ backgroundColor: '#FFFFFF' }}
+                    <Card sx={{ borderRadius: 10, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)',   marginLeft: "1px", marginRight: "200px", marginTop: "30px", height: '330px'}} elevation={0}
                     >
+                        <Divider sx={{ marginBottom: "10px", marginTop: "10px" }}>
+                            <Chip style={{ backgroundColor: '#cca2a2', color: 'white',   height: '25px' }} size="large" label="LOCATION"  />
+                        </Divider>
+                        <div
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
 
-                        <div style={{ border: "0", display: "flex", alignItems: "center", maxWidth: "100%" }}>
+                            }}
+                        >
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8114.724513243031!2d24.7508183!3d59.4383926!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46929361741d52e1%3A0xfbe21956f9672088!2sBCS%20Koolitus!5e0!3m2!1set!2see!4v1681391315300!5m2!1set!2see"
-                                allowfullscreen=""
+                                allowFullScreen=""
                                 loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"
-                                width="570"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                style={{ borderRadius: '10px', border: '3px solid #C27F85' }}
                             ></iframe>
                         </div>
-                        <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
-                            <Chip style={{ backgroundColor: '#cca2a2', color: 'white',  width: '200px', height: '25px' }} size="large" label="CAKE SIZE (KG)" />
+                        <Divider sx={{ marginBottom: "10px", marginTop: "10px" }}>
+                            <Chip style={{ backgroundColor: '#cca2a2', color: 'white',   height: '25px' }} size="large" label="REVIEW" />
                         </Divider>
-                        <div style={{ border: "0", display: "flex", alignItems: "center", maxWidth: "100%" }}><Typography>
+                        <div style={{ border: "0", display: "flex", alignItems: "center", maxWidth: "100%" }}>
 
-    I had the pleasure of working with Maria for my wedding
-    cake, and I couldn't have been happier with the final
-    product. The cake was not only beautiful, but also
-    absolutely delicious - our guests raved about it all
-    night! Maria was a pleasure to work with, and I would
-    highly recommend their services to anyone in need of a
-    talented and professional baker. I definately reccommend
-    her work!
-</Typography>
+
+                            <Typography style={{fontStyle: 'italic'}}>
+                                I had the pleasure of working with Maria for my wedding
+                                cake, and I couldn't have been happier with the final
+                                product.
+                            </Typography>
 
                     </div>
 
 
 
-
-
-
-</Box>
+</Card>
                 </Grid>
 
             </Grid>
