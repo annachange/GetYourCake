@@ -15,7 +15,7 @@ import Typography from '@mui/material/Typography';
 
 const StyledRating = styled(Rating)({
     '& .MuiRating-iconFilled': {
-        color: '#e0d7d8',
+        color: '#d76999',
     },
     '& .MuiRating-iconHover': {
         color: '#ff3d47',
@@ -97,12 +97,11 @@ function MainCards(props) {
 
 
     const headerStyle = {
-        backgroundColor: "#cca2a2",
+        backgroundColor: "#ffd5d6",
         fontSize: "1rem",
         transition: "font-size 0.2s ease-in-out",
         textTransform: "none",
-
-        color: "#f8f7f8"
+        color: "#060606"
     };
 
     const handleClick = () => {
@@ -120,13 +119,13 @@ function MainCards(props) {
                 let url = 'bakerProfilePage/'+ baker.id
                 return (
                     <Grid item xs={4} key={index}>
-                        <Card sx={{ borderRadius: 16, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}} >
+                        <Card sx={{ borderRadius: 16,  boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.25)'}} >
                             <CardHeader
                                 style={headerStyle}
                                 avatar={
                                     <Avatar alt={baker.name}
                                             src={baker.profilepicturepath}
-                                            sx={{ width: 100, height: 100 }}/>
+                                            sx={{ width: 100, height: 100, border: '1px #060606'}}/>
                                 }
                                 title={
                                     <div>

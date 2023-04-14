@@ -15,9 +15,7 @@ import {onAuthStateChanged} from 'firebase/auth';
 import PrivateRoute from './PrivateRoute';
 
 
-// import FiltersBar from './components/FiltersBar';
-// import MainViewCards from "./components/MainViewCards";
-//import UserLogin from './UserLogin';
+
 
 
 

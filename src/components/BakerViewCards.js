@@ -24,7 +24,7 @@ function BakerCards(props) {
                     return (
 
                 <Grid item xs={4} key={index}>
-                    <Card sx={{ height: 350, width: 350, borderRadius: 10, border: '3px solid #C27F85', boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)'}}>
+                    <Card sx={{ height: 350, width: 350, borderRadius: 10,  boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.25)'}}>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                             <CardMedia
                                 sx={{ width: 250, height: 250 }}

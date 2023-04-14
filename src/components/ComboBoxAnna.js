@@ -118,58 +118,55 @@ function ComboBoxAnna(props) {
                 <Grid container rowSpacing={2} justify="center">
                     <Grid item xs={6} >
                         <Box
-                            borderRadius={10}
-                            border={4}
-                            borderColor="#cca2a2"
+
                             p={2}
                             sx={{
                                 width: '100%',
                                 maxWidth: 600,
-                                boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)',
+                                boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.25)',
                                 backgroundColor: '#FFFFFF',
                                 display: 'flex',
                                 justifyContent: 'center',
-                                alignItems: 'center'
+                                alignItems: 'center',
+                                borderRadius: '30px'
                             }}
                         >
-                            <Card sx={{ maxWidth: 345 }} elevation={0}>
+                            <div>
+                            <Card elevation={0}>
                                 <CardMedia
                                     component="img"
                                     image={props.cake.picture_path}
                                     alt={props.cake.name}
-                                    sx={{ display: 'flex', justifyContent: 'center' }}
-
+                                    sx={{  maxWidth: 380, margin: '0 auto' }}
                                 />
+                                <CardContent>
+                                    <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
+                                        <Chip style={{ backgroundColor: '#d76999', color: 'white',  width: '200px', height: '25px' }} size="large" label="DESCRIPTION" />
+                                    </Divider>
+                                    <Typography variant="h6" style={{ margin: '15px' }}>
+                                       {props.cake.description} fdgdgdfgdfgdfgdfgdgdfdfdfdfdfdfdfdfdferterter
+                                    </Typography>
+                                    <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
+                                        <Chip style={{ backgroundColor: '#d76999', color: 'white',  width: '200px', height: '25px' }} size="large" label="BAKER INFO" />
+                                    </Divider>
+
+                                </CardContent>
                             </Card>
-                        </Box>
-                        <Box
-                            borderRadius={10}
-                            border={4}
-                            borderColor="#cca2a2"
-                            p={2}
-                            sx={{
-                                width: '100%',
-                                maxWidth: 600,
-                                boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)',
-                            }}
-                            style={{ backgroundColor: '#FFFFFF' }}
-                        >
+            </div>
 
-
-                            <VerticalTabs baker={props.baker} cake={props.cake}/>
                         </Box>
+
 
                     </Grid>
                     <Grid item xs={6} >
                         <Box
-                            borderRadius={10}
-                            border={4}
-                            borderColor="#cca2a2"
+
                             p={2}
                             sx={{
                                 width: '100%',
                                 maxWidth: 600,
-                                boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)',
+                                boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.25)',
+                                borderRadius: '30px'
                             }}
                             style={{ backgroundColor: '#FFFFFF' }}
                         >
@@ -179,7 +176,7 @@ function ComboBoxAnna(props) {
 
                             </div>
                             <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
-                                <Chip style={{ backgroundColor: '#cca2a2', color: 'white',  width: '200px', height: '25px' }} size="large" label="CAKE SIZE (KG)" />
+                                <Chip style={{ backgroundColor: '#d76999', color: 'white',  width: '200px', height: '25px' }} size="large" label="SIZE (KG)" />
                             </Divider>
                             <div className="form-section" sx={{ width: 300 }}>
                                 <Slider
@@ -200,7 +197,7 @@ function ComboBoxAnna(props) {
                             </div>
 
                             <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
-                                <Chip style={{ backgroundColor: '#cca2a2', color: 'white',  width: '200px', height: '25px' }} size="large" label="FLAVOUR" />
+                                <Chip style={{ backgroundColor: '#d76999', color: 'white',  width: '200px', height: '25px' }} size="large" label="FLAVOUR" />
                             </Divider>
                             <div className="form-section">
 
@@ -215,7 +212,7 @@ function ComboBoxAnna(props) {
 
                             </div>
                             <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
-                                <Chip style={{ backgroundColor: '#cca2a2', color: 'white',  width: '200px', height: '25px' }} size="large" label="DELIVERY" />
+                                <Chip style={{ backgroundColor: '#d76999', color: 'white',  width: '200px', height: '25px' }} size="large" label="DELIVERY" />
                             </Divider>
 
                             <div className="form-section">
@@ -228,7 +225,7 @@ function ComboBoxAnna(props) {
 
                             </div>
                             <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
-                                <Chip style={{ backgroundColor: '#cca2a2', color: 'white',  width: '200px', height: '25px' }} size="large" label="COMMENT" />
+                                <Chip style={{ backgroundColor: '#d76999', color: 'white',  width: '200px', height: '25px' }} size="large" label="COMMENT" />
                             </Divider>
 
 

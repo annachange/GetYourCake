@@ -52,7 +52,7 @@ function ImageRadioButtons() {
             </RadioGroup>
             {selectedImage && (
                 <div style={{ marginTop: '2px' }}>
-                    <p style={{ color: '#cca2a2' }}>{selectedImage.description}</p>
+                    <p>{selectedImage.description}</p>
                 </div>
             )}
         </div>

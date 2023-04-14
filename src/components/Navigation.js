@@ -1,6 +1,9 @@
 import React from "react";
 import Button from "@mui/material/Button";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
+import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { Link , useNavigate} from "react-router-dom";
 import {signOut} from "firebase/auth";
 import {auth} from "../firebase";
@@ -33,18 +36,17 @@ function Navigation(props) {
           </Link>
         </div>
         <div className="navbar-buttons">
-          <Button component={Link} to="/">MAIN PAGE</Button>
           {currentUser === null &&
-            <Button onClick={() => navigate("login")}>BAKER LOG IN</Button>
+            <Button sx={{ height: "42px", margin: '2px' }} onClick={() => navigate("login")}>  <LoginOutlinedIcon />{" "}</Button>
           }
           {currentUser !== null &&
-            <Button onClick={() => signOut(auth)}>SIGN OUT</Button>
+            <Button sx={{ height: "42px", margin: '2px' }} onClick={() => signOut(auth)}><LogoutOutlinedIcon />{" "}</Button>
           }
 
           {currentUser !== null &&
-              <Button onClick={() => navigate("profile")}>PROFILE</Button>
+              <Button sx={{ height: "42px", margin: '2px' }} onClick={() => navigate("profile")}><AccountCircleOutlinedIcon />{" "}</Button>
           }
-          <Button sx={{ height: "42px" }}>
+          <Button sx={{ height: "42px", margin: '2px'}}>
             <ShoppingCartRoundedIcon />{" "}
           </Button>
         </div>

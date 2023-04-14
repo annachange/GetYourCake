@@ -3,36 +3,20 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import BakerProfilePage from "./components/BakerProfilePage";
-import ProductSelectionPage from "./components/ProductSelectionPage";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
 
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <App />,
-//   },
-//   {
-//     path: "bakerProfilePage",
-//     element: <BakerProfilePage />,
-//   },
-//   {
-//     path: "productSelectionPage",
-//     element: <ProductSelectionPage />,
-//   },
-// ]);
+
 
 //____Theme Provider
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#cca2a2",
+      main: "#d76999",
     },
     secondary: {
-      main: "#cca2a2",
+      main: "#d76999",
     },
     background: {
       default: "#86CFC7",
@@ -73,16 +57,16 @@ const theme = createTheme({
           props: { variant: "my_button" },
           style: {
             textTransform: "none",
-            border: `1px solid #cca2a2`,
+
             fontSize: "1rem",
             transition: "font-size 0.2s ease-in-out",
-            backgroundColor: "#EDD9DB", // Change the background color
-            color: "#C27F85", // Change the text color
+            backgroundColor: "rgba(6,6,6,0.7)", // Change the background color
+            color: "white", // Change the text color
             "&:hover": {
               fontSize: "1rem",
-              backgroundColor: "#C27F85",
-              color: "#EDD9DB",
-              boxShadow: "0px 1px 8px #FDE2E2",
+              backgroundColor: "#d76999",
+              color: "white",
+              boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.25)",
             },
           },
         },
