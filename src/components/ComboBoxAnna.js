@@ -31,7 +31,20 @@ import Switcher from "./textpage";
 import SwitcherTest from "./SwitcherTest";
 import BakerProfileSection from "./BakerProfileSection";
 import VerticalTabs from "./VerticalTabs";
+import Avatar from "@mui/material/Avatar";
+import CakeIcon from "@mui/icons-material/Cake";
+import CakeOutlinedIcon from "@mui/icons-material/CakeOutlined";
+import {styled} from "@mui/material/styles";
+import Rating from "@mui/material/Rating";
 
+const StyledRating = styled(Rating)({
+    '& .MuiRating-iconFilled': {
+        color: '#d76999',
+    },
+    '& .MuiRating-iconHover': {
+        color: '#ff3d47',
+    },
+});
 
 const cards = [
     { id: 1, src: img1, title: 'Image 1', description: 'This is pistachio' },
@@ -52,6 +65,14 @@ function ComboBoxAnna(props) {
     const [isSwitchOn, setIsSwitchOn] = useState(false);
     const [address, setAddress] = useState('');
 
+
+    const headerStyle = {
+
+        fontSize: "1rem",
+        transition: "font-size 0.2s ease-in-out",
+        textTransform: "none",
+        color: "#060606"
+    };
 
     const marks = [
 
@@ -114,9 +135,9 @@ function ComboBoxAnna(props) {
     return (
 
         <>
-            <div className="container">
-                <Grid container rowSpacing={2} justify="center">
-                    <Grid item xs={6} >
+            <div className="container" style={{ height: '800px', marginTop: '50px', marginBottom: '50px' }}>
+                <Grid container rowSpacing={2} justify="center" style={{ height: '100%' }}>
+                    <Grid item xs={6} style={{ height: '100%' }}>
                         <Box
 
                             p={2}
@@ -128,9 +149,12 @@ function ComboBoxAnna(props) {
                                 display: 'flex',
                                 justifyContent: 'center',
                                 alignItems: 'center',
-                                borderRadius: '30px'
+                                borderRadius: '30px',
+                                height: '100%'
                             }}
                         >
+
+
                             <div>
                             <Card elevation={0}>
                                 <CardMedia
@@ -139,18 +163,55 @@ function ComboBoxAnna(props) {
                                     alt={props.cake.name}
                                     sx={{  maxWidth: 380, margin: '0 auto' }}
                                 />
-                                <CardContent>
+                                <CardContent
+                                    sx={{  maxWidth: 500, margin: '0 auto' }}>
+                                    <Typography variant="h5">{props.cake.name}</Typography>
                                     <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
                                         <Chip style={{ backgroundColor: '#d76999', color: 'white',  width: '200px', height: '25px' }} size="large" label="DESCRIPTION" />
                                     </Divider>
                                     <Typography variant="h6" style={{ margin: '15px' }}>
-                                       {props.cake.description} fdgdgdfgdfgdfgdfgdgdfdfdfdfdfdfdfdfdferterter
+                                       {props.cake.description} rterte ert e rt  ert er erte ertreterte ertetet ertetert
                                     </Typography>
-                                    <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
+                                    <Divider sx={{ marginBottom: "-15px", marginTop: "15px" }}>
                                         <Chip style={{ backgroundColor: '#d76999', color: 'white',  width: '200px', height: '25px' }} size="large" label="BAKER INFO" />
                                     </Divider>
+                                   {/* <Typography style={{ margin: '15px' }}>
+                                    {props.baker.name} from {props.baker.location}
+                                    </Typography>*/}
 
                                 </CardContent>
+
+                                <CardHeader
+                                    sx={{  maxWidth: 380, margin: '0 auto' }}
+                                    style={headerStyle}
+                                    avatar={
+                                        <Avatar alt={props.baker.name}
+                                                src={props.baker.profilepicturepath}
+                                                sx={{ width: 80, height: 80, border: '1px #060606'}}/>
+                                    }
+                                    title={
+                                        <div>
+                                            <Typography variant="h6" component="div">
+                                               {props.baker.name} from {props.baker.location}
+                                            </Typography>
+                                        </div>
+                                    }
+                                    subheader={
+                                        <StyledRating
+                                            size='small'
+                                            name="example-rating"
+                                            value={props.baker.rating}
+                                            precision={0.5}
+                                            readOnly
+                                            getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                                            icon={<CakeIcon fontSize="inherit" />}
+                                            emptyIcon={<CakeOutlinedIcon fontSize="inherit" />}
+                                        />
+                                    }
+
+                                >
+                                </CardHeader>
+
                             </Card>
             </div>
 
@@ -158,7 +219,7 @@ function ComboBoxAnna(props) {
 
 
                     </Grid>
-                    <Grid item xs={6} >
+                    <Grid item xs={6} style={{ height: '100%' }}>
                         <Box
 
                             p={2}
@@ -166,13 +227,15 @@ function ComboBoxAnna(props) {
                                 width: '100%',
                                 maxWidth: 600,
                                 boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.25)',
-                                borderRadius: '30px'
+                                borderRadius: '30px',
+                                height: '100%'
+
                             }}
                             style={{ backgroundColor: '#FFFFFF' }}
                         >
 
                             <div>
-                                <Typography variant="h4">{props.cake.name}</Typography>
+                                <Typography variant="h5">Choose your cake specifications</Typography>
 
                             </div>
                             <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
@@ -243,7 +306,7 @@ function ComboBoxAnna(props) {
                             </div>
 
                             <div>
-                                <Typography variant="h4">TOTAL PRICE IS {calculatePrice()} EUR</Typography>
+                                <Typography variant="h4"  sx={{ marginBottom: "15px", marginTop: "15px" }}>TOTAL PRICE IS {calculatePrice()} EUR</Typography>
                             </div>
 
                             <div> <Button>Add to cart</Button></div>

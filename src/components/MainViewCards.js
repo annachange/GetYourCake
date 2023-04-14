@@ -12,6 +12,7 @@ import { styled } from '@mui/material/styles';
 import CakeIcon from '@mui/icons-material/Cake';
 import CakeOutlinedIcon from '@mui/icons-material/CakeOutlined';
 import Typography from '@mui/material/Typography';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 const StyledRating = styled(Rating)({
     '& .MuiRating-iconFilled': {

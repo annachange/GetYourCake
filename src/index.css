@@ -67,8 +67,8 @@ footer {
 .navbar-brand {
   font-size: 2rem;
   font-weight: bold;
+  color: #d76999;
 
-  color: rgba(6,6,6,0.7);
   display: flex;
   align-items: left;
   justify-content: left;
@@ -82,7 +82,7 @@ footer {
 .navbar-brand:hover {
   font-size: 2rem;
   font-weight: bold;
-  color: #d76999;
+  color: rgba(6,6,6,0.7);
   display: flex;
   align-items: left;
   justify-content: left;

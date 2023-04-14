@@ -90,13 +90,14 @@ function FiltersBar() {
 
     return (
         <>
-            <Grid container spacing={2} sx={{mt:2, mb:3}} alignItems="center">
-                <Grid item xs={12} md={3}>
+            <Grid container spacing={2} sx={{mt:2, mb:3}} alignItems="center" sx={{ marginTop: '30px', marginBottom: '30px' }}>
+                <Grid item xs={4}>
                     {/*<MultipleSelectChip/>*/}
                     <div>
-                        <FormControl sx={{ m: 1, width: 300 }}>
-                            <InputLabel>Choose location</InputLabel>
+                        <FormControl sx={{ m: 1, width: 300, backgroundColor: '#ffd5d6' }}>
+                            <InputLabel>Filter by location</InputLabel>
                             <Select
+                                label="Filter by baker availability"
                                 multiple
                                 value={userLocation}
                                 // onChange={handleLocationChange}
@@ -105,11 +106,12 @@ function FiltersBar() {
                                 renderValue={(selected) => (
                                     <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                                         {selected.map((value) => (
-                                            <Chip key={value} label={value} />
+                                            <Chip key={value} label={value}  />
                                         ))}
                                     </Box>
                                 )}
                                 MenuProps={MenuProps}
+
                             >
                                 {locations.map((location) => (
                                     <MenuItem key={location} value={location}>
@@ -120,12 +122,13 @@ function FiltersBar() {
                         </FormControl>
                     </div>
                 </Grid>
-                <Grid item xs={12} md={3}>
+                <Grid item xs={4}>
                     {/*<MultipleSelectCheckmarks/>*/}
                     <div>
-                        <FormControl sx={{ m: 1, width: 300 }}>
-                            <InputLabel >Choose limitations</InputLabel>
+                        <FormControl sx={{ m: 1, width: 300, backgroundColor: '#ffd5d6' }}>
+                            <InputLabel >Filter by limitations</InputLabel>
                             <Select
+                                label="Filter by limitations"
                                 multiple
                                 value={userLimitation}
                                 onChange={handleLimitationChange}
@@ -143,14 +146,15 @@ function FiltersBar() {
                         </FormControl>
                     </div>
                 </Grid>
-                <Grid item xs={12} md={3}>
-                    <TextField id="outlined-basic" type="datetime-local" variant="outlined" onChange={(event) => setUserDate(event.target.value)} />
+                <Grid item xs={4}>
+                    <TextField   label="Filter by baker availability"
+
+                                 InputLabelProps={{
+                                     shrink: true,
+                                 }}
+                                 sx={{ m: 1, width: 300, backgroundColor: '#ffd5d6' }} id="outlined-basic" type="datetime-local" variant="outlined" onChange={(event) => setUserDate(event.target.value)} />
                 </Grid>
-                <Grid item xs={12} md={3}>
-                    <Button sx={{ height: "42px" }} >
-                        <SearchIcon />{" "}
-                    </Button>
-                </Grid>
+
             </Grid>
 
             <Grid container spacing={0} sx={{mt:2, mb:3}} alignItems="center">
