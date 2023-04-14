@@ -53,7 +53,7 @@ function VerticalTabs(props) {
             <Tabs
                 centered
                 orientation="vertical"
-                variant="scrollable"
+
                 value={value}
                 onChange={handleChange}
                 aria-label="Vertical tabs example"
