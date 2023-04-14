@@ -1,14 +1,13 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import {GetYourCakeContext} from "../utils/GetYourCakeContext";
-import { Grid, Card, CardContent, CardMedia, CardHeader, Box } from '@mui/material';
+import moment from 'moment';
+import { Grid, Card, CardContent, CardHeader } from '@mui/material';
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
-
 import Rating from '@mui/material/Rating';
 import CakeLoop from "./CakeLoop";
 import {Link} from "react-router-dom";
-
 import { styled } from '@mui/material/styles';
 import CakeIcon from '@mui/icons-material/Cake';
 import CakeOutlinedIcon from '@mui/icons-material/CakeOutlined';
@@ -23,15 +22,79 @@ const StyledRating = styled(Rating)({
     },
 });
 
-
-
-
-function MainCards() {
+function MainCards(props) {
 
     const gyc = useContext(GetYourCakeContext);  //it contains bakers and cakes
     // console.log(gyc)
     // console.log(gyc.bakers)
     // console.log(gyc.cakes)
+
+    let bakersArray = []
+
+    // now comes location  loop:
+    if (props.selectedLocations.length > 0) {  // shows that something is selected
+
+        let innerArray = []
+        for (const loc of props.selectedLocations) {
+
+            const result = gyc.bakers.filter(bk => bk.location === loc)  // filter the gyc according to the choice
+
+            for (const res of result) {
+                innerArray.push(res)
+            }
+
+        }
+        bakersArray = [...innerArray]
+
+    } else {
+
+        bakersArray = gyc.bakers
+    }
+
+    // now comes ingredients loop:
+
+    if (props.selectedLimitations.length > 0) {  // shows that something is selected
+
+
+        let innerArray1 = []
+
+
+        for (const bk of bakersArray) {
+
+            const hasAll = props.selectedLimitations.every(lmt => bk.intolerance.includes(lmt))
+            if (hasAll === true) {
+                innerArray1.push(bk)
+            }
+
+        }
+
+
+
+        bakersArray = [...innerArray1]
+
+    }
+
+    // check for available dates
+    if (props.selectedDate.length > 0) {  // shows that something is selected
+
+        let dateToCheck = moment(props.selectedDate).format('YYYY-MM-DD')
+
+        let innerArray2 = []
+
+
+        for (const bk of bakersArray) {
+
+            let res = moment(dateToCheck).isBetween(bk.availabilitystart, bk.availabilityend);
+            if (res === true) {
+                innerArray2.push(bk)
+            }
+
+        }
+
+        bakersArray = [...innerArray2]
+
+    }
+
 
     const headerStyle = {
         backgroundColor: "#cca2a2",
@@ -52,8 +115,8 @@ function MainCards() {
 
         <Grid sx={{ padding: '0 100px' }} justifyContent="center" container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
 
-            {gyc.bakers.map((baker, index) => {
-
+            {bakersArray.map((baker, index) => {
+                // {gyc.bakers.map((baker, index) => {
                 let url = 'bakerProfilePage/'+ baker.id
                 return (
                     <Grid item xs={4} key={index}>
@@ -84,15 +147,9 @@ function MainCards() {
                                         emptyIcon={<CakeOutlinedIcon fontSize="inherit" />}
                                     />
                                 }
-
                             >
                             </CardHeader>
-
-
-
-
                             <CardContent >
-
                                 <div sx={{ justify: 'center', margin: '-20px'}}><CakeLoop baker={baker.id}/></div>
 
                             </CardContent>
@@ -101,21 +158,11 @@ function MainCards() {
 
                             </CardActions>
                         </Card>
-
                     </Grid>
-
                 )
             })}
 
-
-
-
-
             </Grid>
-
-
-
-
 
     );
 }

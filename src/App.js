@@ -47,7 +47,6 @@ function App() {
                 const newData = querySnapshot.docs
                     .map((doc) => ({...doc.data(), id: doc.id}));
                 setBakers(newData);
-                console.log(bakers, newData);
             })
 
     }
@@ -59,7 +58,6 @@ function App() {
                 const newData = querySnapshot.docs
                     .map((doc) => ({...doc.data(), id: doc.id}));
                 setCakes(newData);
-                console.log(cakes, newData);
             })
 
     }

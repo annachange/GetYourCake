@@ -12,8 +12,6 @@ function Navigation(props) {
   const {currentUser} = useAuthValue()
   const navigate = useNavigate()
 
-  console.log(currentUser)
-
   return (
     <nav class="navbar navbar-custom navbar-expand-lg sticky-top">
       <div class="container-fluid justify-content-between">
