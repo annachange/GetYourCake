@@ -28,7 +28,7 @@ const StyledRating = styled(Rating)({
     },
 });
 
-function BakerProfileSection() {
+function BakerProfileSection(props) {
     const headerStyle = {
         backgroundColor: "#cca2a2",
         fontSize: "1rem",
@@ -50,14 +50,14 @@ function BakerProfileSection() {
                             <CardHeader
                                 style={headerStyle}
                                 avatar={
-                                    <Avatar alt="Remy Sharp"
-                                            src={personimg1}
+                                    <Avatar alt={props.baker.name}
+                                            src={props.baker.profilepicturepath}
                                             sx={{ width: 100, height: 100 }}/>
                                 }
                                 title={
                                     <div>
                                         <Typography variant="h6" component="div">
-                                            <strong> Maria from Tartu</strong>
+                                            <strong> {props.baker.name} from {props.baker.location}</strong>
                                         </Typography>
                                     </div>
                                 }
@@ -65,7 +65,7 @@ function BakerProfileSection() {
                                     <StyledRating
                                         size='small'
                                         name="example-rating"
-                                        value={4.5}
+                                        value={props.baker.rating}
                                         precision={0.5}
                                         readOnly
                                         getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -78,7 +78,7 @@ function BakerProfileSection() {
                             </CardHeader>
 
                             <CardContent justify="center">
-                                With 15+ years of experience, I'm a passionate baker dedicated to creating delicious and beautiful baked goods. For the best quality, please place your order at least 24 hours in advance.
+                                {props.baker.overview}
 
                             </CardContent>
                             <CardActions style={{ display: 'flex', justifyContent: 'center' }}>
@@ -105,7 +105,7 @@ function BakerProfileSection() {
                             }}
                         >
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8114.724513243031!2d24.7508183!3d59.4383926!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46929361741d52e1%3A0xfbe21956f9672088!2sBCS%20Koolitus!5e0!3m2!1set!2see!4v1681391315300!5m2!1set!2see"
+                                src={props.baker.map}
                                 allowFullScreen=""
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
@@ -119,9 +119,7 @@ function BakerProfileSection() {
 
 
                             <Typography style={{fontStyle: 'italic'}}>
-                                I had the pleasure of working with Maria for my wedding
-                                cake, and I couldn't have been happier with the final
-                                product.
+                                {props.baker.review}
                             </Typography>
 
                     </div>

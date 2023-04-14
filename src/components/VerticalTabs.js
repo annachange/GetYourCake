@@ -4,6 +4,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import BakerProfileSection from "./BakerProfileSection";
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -50,12 +51,21 @@ function VerticalTabs(props) {
             sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 224 }}
         >
             <Tabs
+                centered
                 orientation="vertical"
                 variant="scrollable"
                 value={value}
                 onChange={handleChange}
                 aria-label="Vertical tabs example"
-                sx={{ borderRight: 1, borderColor: 'divider'}}
+                sx={{
+                    borderRight: 1,
+                    borderColor: 'divider',
+                    '& .MuiTab-wrapper': {
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }
+                }}
             >
                 <Tab label="Description" {...a11yProps(0)} />
                 <Tab label="Baker info" {...a11yProps(1)} />
@@ -68,6 +78,7 @@ function VerticalTabs(props) {
             </TabPanel>
             <TabPanel value={value} index={1}>
                 {props.baker.name}
+
             </TabPanel>
             {/*<TabPanel value={value} index={2}>*/}
             {/*    Item Three*/}

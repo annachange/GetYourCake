@@ -1,33 +1,19 @@
 import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import Radio from '@mui/material/Radio';
+
 import { Grid, CardMedia, CardHeader, Accordion, AccordionSummary, AccordionDetails, Card, CardContent, Typography } from '@mui/material';
-import FormGroup from '@mui/material/FormGroup';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
-import Switch from '@mui/material/Switch';
-import CardActions from '@mui/material/CardActions';
+
 import Button from '@mui/material/Button';
-import Avatar from '@mui/material/Avatar';
-import { red } from '@mui/material/colors';
-import IconButton from '@mui/material/IconButton';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
-import Rating from '@mui/material/Rating';
+
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Slider from '@mui/material/Slider';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 
 import CakeFlavoursSelection from "./CakeFlavoursSelection";
-import textpage from "./textpage";
+
 
 
 import img1 from '../images/image1.jpg';
@@ -140,14 +126,18 @@ function ComboBoxAnna(props) {
                         width: '100%',
                         maxWidth: 600,
                         boxShadow: '0px 20px 20px 0px rgba(0,0,0,0.25)',
+                        backgroundColor: '#FFFFFF',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
                     }}
-                    style={{ backgroundColor: '#FFFFFF' }}
                 >
                     <Card sx={{ maxWidth: 345 }} elevation={0}>
                         <CardMedia
                             component="img"
                             image={props.cake.picture_path}
                             alt={props.cake.name}
+                            sx={{ display: 'flex', justifyContent: 'center' }}
 
                         />
                     </Card>
