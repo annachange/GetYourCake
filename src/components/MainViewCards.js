@@ -120,7 +120,7 @@ function MainCards(props) {
                 let url = 'bakerProfilePage/'+ baker.id
                 return (
                     <Grid item xs={4} key={index}>
-                        <Card sx={{ borderRadius: 16,  boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.25)'}} >
+                        <Card style={{ border: '1px solid #d76999' }} sx={{ borderRadius: 16,  boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.25)'}} >
                             <CardHeader
                                 style={headerStyle}
                                 avatar={

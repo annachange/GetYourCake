@@ -44,7 +44,7 @@ function BakerProfileSection(props) {
             <Grid item xs={6}
             >
 
-                <Card sx={{ backgroundColor: '#ffd5d6', borderRadius: '20px 0 0 20px',  boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.25)',  marginLeft: "200px",  marginTop: "30px", height: '330px' }} elevation={0}
+                <Card style={{ border: '1px solid #d76999' }} sx={{ backgroundColor: '#ffd5d6', borderRadius: '20px 0 0 20px',  boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.25)',  marginLeft: "200px",  marginTop: "30px", height: '330px' }} elevation={0}
                 >
                     <CardHeader
                         style={headerStyle}
@@ -75,7 +75,7 @@ function BakerProfileSection(props) {
 
                     >
                     </CardHeader>
-                    <Chip sx={{ marginBottom: "12px", marginTop: "-20px" }} style={{ backgroundColor: '#d76999', color: 'white',   height: '25px' }} size="large" label="LOCATION"  />
+                    <Chip sx={{ marginBottom: "12px", marginTop: "-20px" }} style={{ backgroundColor: '#d76999', color: 'white',   height: '25px' }} size="large" label="ABOUT"  />
                     <CardContent sx={{ bgcolor: '#ffd5d6' }} justify="center">
 
                         {props.baker.overview}
@@ -91,7 +91,7 @@ function BakerProfileSection(props) {
             </Grid>
 
             <Grid item xs={6} >
-                <Card sx={{  borderRadius: '0 20px 20px 0',  boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.25)',    marginRight: "200px", marginTop: "30px", height: '330px'}} elevation={0}
+                <Card style={{ border: '1px solid #d76999' }}  sx={{  borderRadius: '0 20px 20px 0',  boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.25)',    marginRight: "200px", marginTop: "30px", height: '330px'}} elevation={0}
                 >
 
                         <Chip sx={{ marginBottom: "12px", marginTop: "12px" }} style={{ backgroundColor: '#d76999', color: 'white',   height: '25px' }} size="large" label="LOCATION"  />

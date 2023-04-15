@@ -150,8 +150,9 @@ function ComboBoxAnna(props) {
                                 justifyContent: 'center',
                                 alignItems: 'center',
                                 borderRadius: '30px',
-                                height: '100%'
+                                height: '100%',
                             }}
+                            style={{ backgroundColor: '#FFFFFF', border: '1px solid #d76999' }}
                         >
 
 
@@ -164,13 +165,13 @@ function ComboBoxAnna(props) {
                                     sx={{  maxWidth: 380, margin: '0 auto' }}
                                 />
                                 <CardContent
-                                    sx={{  maxWidth: 500, margin: '0 auto' }}>
+                                    sx={{  maxWidth: 600, margin: '0 auto' }}>
                                     <Typography variant="h5">{props.cake.name}</Typography>
                                     <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
                                         <Chip style={{ backgroundColor: '#d76999', color: 'white',  width: '200px', height: '25px' }} size="large" label="DESCRIPTION" />
                                     </Divider>
-                                    <Typography variant="h6" style={{ margin: '15px' }}>
-                                       {props.cake.description} rterte ert e rt  ert er erte ertreterte ertetet ertetert
+                                    <Typography style={{ margin: '20px' }}>
+                                       {props.cake.description}
                                     </Typography>
                                     <Divider sx={{ marginBottom: "-15px", marginTop: "15px" }}>
                                         <Chip style={{ backgroundColor: '#d76999', color: 'white',  width: '200px', height: '25px' }} size="large" label="BAKER INFO" />
@@ -191,7 +192,7 @@ function ComboBoxAnna(props) {
                                     }
                                     title={
                                         <div>
-                                            <Typography variant="h6" component="div">
+                                            <Typography  style={{ margin: '5px' }} component="div">
                                                {props.baker.name} from {props.baker.location}
                                             </Typography>
                                         </div>
@@ -231,7 +232,7 @@ function ComboBoxAnna(props) {
                                 height: '100%'
 
                             }}
-                            style={{ backgroundColor: '#FFFFFF' }}
+                            style={{ backgroundColor: '#FFFFFF', border: '1px solid #d76999' }}
                         >
 
                             <div>
