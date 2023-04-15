@@ -1,22 +1,19 @@
+//card with main details about baker including about, location, review parts
+
+//included into BakerProfilePage
+
+
 import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { Grid, Card, CardContent, Divider, CardHeader } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import Rating from "@mui/material/Rating";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import ImageListItemBar from "@mui/material/ImageListItemBar";
-import CardActions from "@mui/material/CardActions";
-import Button from "@mui/material/Button";
-import personimg1 from "../images/person1.jpg";
-import personimg2 from "../images/person2.jpg";
 import Chip from "@mui/material/Chip";
 import CakeIcon from "@mui/icons-material/Cake";
 import CakeOutlinedIcon from "@mui/icons-material/CakeOutlined";
 import {styled} from "@mui/material/styles";
 
-import { Carousel } from 'react-bootstrap';
 
 
 const StyledRating = styled(Rating)({
@@ -34,7 +31,7 @@ function BakerProfileSection(props) {
         fontSize: "1rem",
         transition: "font-size 0.2s ease-in-out",
         textTransform: "none",
-        color: "#060606"
+        color: "rgba(6,6,6,0.7)"
     };
 
     return (

@@ -1,3 +1,6 @@
+//cards of the bakers and their 2 cakes on the main page
+
+
 import React, { useContext } from 'react';
 import {GetYourCakeContext} from "../utils/GetYourCakeContext";
 import moment from 'moment';
@@ -12,7 +15,7 @@ import { styled } from '@mui/material/styles';
 import CakeIcon from '@mui/icons-material/Cake';
 import CakeOutlinedIcon from '@mui/icons-material/CakeOutlined';
 import Typography from '@mui/material/Typography';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+
 
 const StyledRating = styled(Rating)({
     '& .MuiRating-iconFilled': {
@@ -102,7 +105,7 @@ function MainCards(props) {
         fontSize: "1rem",
         transition: "font-size 0.2s ease-in-out",
         textTransform: "none",
-        color: "#060606"
+        color: "rgba(6,6,6,0.7)"
     };
 
     const handleClick = () => {
@@ -120,7 +123,7 @@ function MainCards(props) {
                 let url = 'bakerProfilePage/'+ baker.id
                 return (
                     <Grid item xs={4} key={index}>
-                        <Card style={{ border: '1px solid #d76999' }} sx={{ borderRadius: 16,  boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.25)', margin: "12px" }} >
+                        <Card style={{ border: '1px solid #d76999' }} sx={{ borderRadius: 10,  boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.25)', margin: "12px" }} >
                             <CardHeader
                                 style={headerStyle}
                                 avatar={

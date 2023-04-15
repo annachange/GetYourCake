@@ -1,8 +1,12 @@
+//looping through all cakes and showing first 2 products related to specific baker
+
+//included into MainViewCards
+
+
 import React, {useContext} from "react";
 import {GetYourCakeContext} from "../utils/GetYourCakeContext";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import ImageListItemBar from "@mui/material/ImageListItemBar";
 import {Link} from "react-router-dom";
 
 function CakeLoop(props) {
@@ -31,10 +35,7 @@ function CakeLoop(props) {
                     alt={cake.name}
                     loading="lazy"
                 />
-                {/*<ImageListItemBar
-                    title={cake.name}
-                    position="below"
-                />*/}
+
             </ImageListItem>)
         })}
     </ImageList>

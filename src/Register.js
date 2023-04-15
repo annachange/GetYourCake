@@ -4,6 +4,7 @@ import {auth} from './firebase'
 import {useNavigate, Link} from 'react-router-dom'
 import {createUserWithEmailAndPassword, sendEmailVerification} from 'firebase/auth'
 import {useAuthValue} from './AuthContext'
+import Button from '@mui/material/Button';
 
 function Register() {
 
@@ -72,7 +73,7 @@ function Register() {
                         placeholder='Confirm password'
                         onChange={e => setConfirmPassword(e.target.value)}/>
 
-                    <button type='submit'>Register</button>
+                    <Button type='submit'>REGISTER</Button>
                 </form>
                 <span>
           Already have an account?  

@@ -1,3 +1,7 @@
+
+
+//code for Header including navigation and buttons
+
 import React from "react";
 import Button from "@mui/material/Button";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";

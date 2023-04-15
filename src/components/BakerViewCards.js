@@ -1,3 +1,9 @@
+//slider for baker's cakes
+
+//included into BakerProfilePage
+
+
+
 import React, {useContext, useState} from 'react';
 import { Grid, Card, CardContent, CardMedia, CardHeader } from '@mui/material';
 import Typography from '@mui/material/Typography';
@@ -72,6 +78,8 @@ function BakerCards(props) {
     );
 }
 
+
+//as alternative, can display cakes in grid
 /*
 
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}  sx={{ padding: '30px', justify: 'center'}}>

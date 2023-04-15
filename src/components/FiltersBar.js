@@ -1,3 +1,9 @@
+//components which allows to filter the bakers based on specific criteria
+
+//included into
+
+
+
 import React from 'react';
 import TextField from '@mui/material/TextField';
 import Grid from "@mui/material/Grid";
@@ -11,11 +17,10 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
-import Button from '@mui/material/Button';
 import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
-import SearchIcon from '@mui/icons-material/Search';
-import {useContext} from "react";
+import Typography from '@mui/material/Typography';
+
 
 // See osa muudab pärast klikkimist avaneva dropdowni kujundust.
 const ITEM_HEIGHT = 48;
@@ -90,14 +95,31 @@ function FiltersBar() {
 
     return (
         <>
-            <Grid container spacing={2} sx={{mt:2, mb:3}} alignItems="center" sx={{ marginTop: '30px', marginBottom: '30px' }}>
+
+
+            <Typography variant="h4" component="h4" sx={{
+                marginTop: '30px',
+                marginBottom: '30px',
+                fontWeight: 'bold',
+                color: '#d76999',
+                textShadow: '0px 0px 70px rgba(0, 0, 0, 0.5)',
+                boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.25)',
+                padding: '15px',
+                borderRadius: '10px',
+                display: 'inline-block',
+            }}>
+                Ordering a cake is a piece of cake
+            </Typography>
+
+            <Grid container spacing={2} sx={{mt:2, mb:3}} alignItems="center" sx={{  marginBottom: '30px' }}>
                 <Grid item xs={4}>
+                    <Typography>Where are you located?</Typography>
                     {/*<MultipleSelectChip/>*/}
                     <div>
                         <FormControl sx={{ m: 1, width: 300, backgroundColor: '#ffd5d6' }}>
-                            <InputLabel>Filter by location</InputLabel>
+                            <InputLabel>Select city</InputLabel>
                             <Select
-                                label="Filter by baker availability"
+                                label="Select location"
                                 multiple
                                 value={userLocation}
                                 // onChange={handleLocationChange}
@@ -122,13 +144,25 @@ function FiltersBar() {
                         </FormControl>
                     </div>
                 </Grid>
+
                 <Grid item xs={4}>
+                    <Typography>When do you need a cake?</Typography>
+                    <TextField   label="Order date"
+
+                                 InputLabelProps={{
+                                     shrink: true,
+                                 }}
+                                 sx={{ m: 1, width: 300, backgroundColor: '#ffd5d6' }} id="outlined-basic" type="datetime-local" variant="outlined" onChange={(event) => setUserDate(event.target.value)} />
+                </Grid>
+
+                <Grid item xs={4}>
+                    <Typography>Do you have any limitations?</Typography>
                     {/*<MultipleSelectCheckmarks/>*/}
                     <div>
                         <FormControl sx={{ m: 1, width: 300, backgroundColor: '#ffd5d6' }}>
-                            <InputLabel >Filter by limitations</InputLabel>
+                            <InputLabel>Select limitations</InputLabel>
                             <Select
-                                label="Filter by limitations"
+                                label="Select limitations"
                                 multiple
                                 value={userLimitation}
                                 onChange={handleLimitationChange}
@@ -146,14 +180,7 @@ function FiltersBar() {
                         </FormControl>
                     </div>
                 </Grid>
-                <Grid item xs={4}>
-                    <TextField   label="Filter by baker availability"
 
-                                 InputLabelProps={{
-                                     shrink: true,
-                                 }}
-                                 sx={{ m: 1, width: 300, backgroundColor: '#ffd5d6' }} id="outlined-basic" type="datetime-local" variant="outlined" onChange={(event) => setUserDate(event.target.value)} />
-                </Grid>
 
             </Grid>
 

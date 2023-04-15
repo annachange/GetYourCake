@@ -1,3 +1,8 @@
+//components where user can select the flavor of the cake
+
+//included into ComboBoxAnna
+
+
 import React, { useState } from 'react';
 import { Radio, RadioGroup, FormControlLabel } from '@mui/material';
 import image1 from '../images/image1.jpg';

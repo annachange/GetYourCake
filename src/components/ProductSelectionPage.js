@@ -1,3 +1,7 @@
+//page for selected cake details
+
+
+
 import React, {useContext} from "react";
 import ComboBoxAnna from "./ComboBoxAnna";
 import {useLocation, useParams} from 'react-router-dom';

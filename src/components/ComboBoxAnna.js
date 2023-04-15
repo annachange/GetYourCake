@@ -1,12 +1,16 @@
+// cards which shows selected cake and allow modify it
+
+//included into ProductSelectionPage
+
+
 import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 
-import { Grid, CardMedia, CardHeader, Accordion, AccordionSummary, AccordionDetails, Card, CardContent, Typography } from '@mui/material';
+import { Grid, CardMedia, CardHeader,  Card, CardContent, Typography } from '@mui/material';
 
 import Button from '@mui/material/Button';
 
 import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Slider from '@mui/material/Slider';
@@ -23,14 +27,8 @@ import img4 from '../images/image4.jpg';
 import img5 from '../images/image5.jpg';
 import img6 from '../images/image6.jpg';
 
-import cakeimg2 from '../images/cake2.jpg';
-import cakeimg1 from "../images/cake1.jpg";
-import cakeimg3 from "../images/cake3.jpg";
-import cakeimg4 from "../images/cake4.jpg";
-import Switcher from "./textpage";
+
 import SwitcherTest from "./SwitcherTest";
-import BakerProfileSection from "./BakerProfileSection";
-import VerticalTabs from "./VerticalTabs";
 import Avatar from "@mui/material/Avatar";
 import CakeIcon from "@mui/icons-material/Cake";
 import CakeOutlinedIcon from "@mui/icons-material/CakeOutlined";
@@ -174,7 +172,7 @@ function ComboBoxAnna(props) {
                                        {props.cake.description}
                                     </Typography>
                                     <Divider sx={{ marginBottom: "-15px", marginTop: "15px" }}>
-                                        <Chip style={{ backgroundColor: '#d76999', color: 'white',  width: '200px', height: '25px' }} size="large" label="BAKER INFO" />
+                                        <Chip style={{ backgroundColor: '#d76999', color: 'white',  width: '200px', height: '25px' }} size="large" label="BAKER" />
                                     </Divider>
                                    {/* <Typography style={{ margin: '15px' }}>
                                     {props.baker.name} from {props.baker.location}
@@ -236,7 +234,7 @@ function ComboBoxAnna(props) {
                         >
 
                             <div>
-                                <Typography variant="h5">Choose your cake specifications</Typography>
+                                <Typography variant="h5" sx={{ marginBottom: "20px" }}>Choose your cake specifications</Typography>
 
                             </div>
                             <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
@@ -299,7 +297,7 @@ function ComboBoxAnna(props) {
                                     sx={{width: 400}}
                                     justify="center"
                                     id="standard-multiline-static"
-                                    label="Please add comment"
+                                    label="Please let us know if you have any special wishes"
                                     multiline
                                     rows={2}
                                     variant="standard"
@@ -307,10 +305,10 @@ function ComboBoxAnna(props) {
                             </div>
 
                             <div>
-                                <Typography variant="h4"  sx={{ marginBottom: "15px", marginTop: "15px" }}>TOTAL PRICE IS {calculatePrice()} EUR</Typography>
+                                <Typography variant="h5"  sx={{ marginBottom: "20px", marginTop: "15px" }}>Cake price is €{calculatePrice()}</Typography>
                             </div>
 
-                            <div> <Button>Add to cart</Button></div>
+                            <div> <Button>ADD TO CARD</Button></div>
 
                         </Box>
                     </Grid>

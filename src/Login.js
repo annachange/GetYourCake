@@ -5,6 +5,7 @@ import {signInWithEmailAndPassword, sendEmailVerification} from 'firebase/auth'
 import {auth} from './firebase'
 import {useNavigate} from 'react-router-dom'
 import {useAuthValue} from './AuthContext'
+import Button from '@mui/material/Button';
 
 
 function Login(){
@@ -53,7 +54,7 @@ function Login(){
                         placeholder='Enter your password'
                         onChange={e => setPassword(e.target.value)}/>
 
-                    <button type='submit'>Login</button>
+                    <Button type='submit'>LOGIN</Button>
                 </form>
                 <p>
                     Don't have and account?

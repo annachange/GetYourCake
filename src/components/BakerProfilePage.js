@@ -1,15 +1,14 @@
+
+//page about baker including card with main baker details and slider with cakes
+
 import React, {useContext} from "react";
 import BakerViewCards from "./BakerViewCards";
 import Box from '@mui/material/Box';
 import BakerProfileSection from "./BakerProfileSection";
-import ToggleButton from "./ToggleButton";
 import { useParams } from "react-router-dom";
 import {GetYourCakeContext} from "../utils/GetYourCakeContext";
 
 
-import { Stack, Chip } from '@mui/material';
-import VerticalTabs from "./VerticalTabs";
-import SlickCakeCards from "./SlickCakeCards";
 
 function BakerProfilePage() {
 
