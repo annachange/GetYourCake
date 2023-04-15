@@ -1,5 +1,6 @@
 import React, {useContext} from "react";
 import BakerViewCards from "./BakerViewCards";
+import Box from '@mui/material/Box';
 import BakerProfileSection from "./BakerProfileSection";
 import ToggleButton from "./ToggleButton";
 import { useParams } from "react-router-dom";
@@ -8,6 +9,7 @@ import {GetYourCakeContext} from "../utils/GetYourCakeContext";
 
 import { Stack, Chip } from '@mui/material';
 import VerticalTabs from "./VerticalTabs";
+import SlickCakeCards from "./SlickCakeCards";
 
 function BakerProfilePage() {
 
@@ -25,20 +27,10 @@ function BakerProfilePage() {
     <>
         <BakerProfileSection baker={baker} />
 
-<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-    <ToggleButton />
-      <div className="BakerProfilePage">
 
-        <div className="content">
-          <div className="content section">
-            {/* <img src="/gyk_logo.png" className="App-logo" alt="logo" /> */}
-            <BakerViewCards cakes={bakerscakes} />
-          </div>
-          {/* Put your page content here */}
-        </div>
+           <Box sx={{ marginLeft: "100px", marginRight: "100px", marginTop: "50px", marginBottom: "50px" }}> <BakerViewCards cakes={bakerscakes} /> </Box>
 
-      </div>
-</div>
+
     </>
   );
 }

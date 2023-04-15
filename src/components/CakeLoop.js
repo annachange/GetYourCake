@@ -10,7 +10,7 @@ function CakeLoop(props) {
     const gyc = useContext(GetYourCakeContext);
     const bakerid = props.baker
 
-    const bakerscakes = gyc.cakes.filter(cake => cake.baker_id === bakerid).slice(0, 4);
+    const bakerscakes = gyc.cakes.filter(cake => cake.baker_id === bakerid).slice(0, 2);
     // console.log(bakerscakes)
 
     const handleClick = () => {

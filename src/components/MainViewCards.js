@@ -113,14 +113,14 @@ function MainCards(props) {
 
         return (
 
-        <Grid sx={{ padding: '0 100px' }} justifyContent="center" container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid sx={{ padding: '0 60px' }} justifyContent="center" container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
 
             {bakersArray.map((baker, index) => {
                 // {gyc.bakers.map((baker, index) => {
                 let url = 'bakerProfilePage/'+ baker.id
                 return (
                     <Grid item xs={4} key={index}>
-                        <Card style={{ border: '1px solid #d76999' }} sx={{ borderRadius: 16,  boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.25)'}} >
+                        <Card style={{ border: '1px solid #d76999' }} sx={{ borderRadius: 16,  boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.25)', margin: "12px" }} >
                             <CardHeader
                                 style={headerStyle}
                                 avatar={
