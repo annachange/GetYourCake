@@ -261,7 +261,7 @@ function ComboBoxAnna(props) {
                             </div>
 
                             <Divider sx={{ marginBottom: "15px", marginTop: "15px" }}>
-                                <Chip style={{ backgroundColor: '#d76999', color: 'white',  width: '200px', height: '25px' }} size="large" label="FLAVOUR" />
+                                <Chip style={{ backgroundColor: '#d76999', color: 'white',  width: '200px', height: '25px' }} size="large" label="FLAVOR" />
                             </Divider>
                             <div className="form-section">
 

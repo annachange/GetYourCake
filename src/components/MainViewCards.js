@@ -126,7 +126,7 @@ function MainCards(props) {
                                 avatar={
                                     <Avatar alt={baker.name}
                                             src={baker.profilepicturepath}
-                                            sx={{ width: 100, height: 100, border: '1px #060606'}}/>
+                                            sx={{ width: 100, height: 100}} style={{ border: '0.5px solid #d76999'}}/>
                                 }
                                 title={
                                     <div>
