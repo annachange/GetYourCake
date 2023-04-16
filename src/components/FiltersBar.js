@@ -20,6 +20,7 @@ import Chip from '@mui/material/Chip';
 import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
 import Typography from '@mui/material/Typography';
+import HeroImage from "./HeroImage";
 
 
 // See osa muudab pärast klikkimist avaneva dropdowni kujundust.
@@ -96,8 +97,8 @@ function FiltersBar() {
     return (
         <>
 
-
-            <Typography variant="h4" component="h4" sx={{
+<HeroImage />
+            {/*<Typography variant="h4" component="h4" sx={{
                 marginTop: '30px',
                 marginBottom: '30px',
                 fontWeight: 'bold',
@@ -109,7 +110,7 @@ function FiltersBar() {
                 display: 'inline-block',
             }}>
                 Ordering a cake is a piece of cake
-            </Typography>
+            </Typography>*/}
 
             <Grid container spacing={2} sx={{mt:2, mb:3}} alignItems="center" sx={{  marginBottom: '30px' }}>
                 <Grid item xs={4}>
