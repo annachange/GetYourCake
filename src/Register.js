@@ -49,7 +49,7 @@ function Register() {
     return (
         <div className='center'>
             <div className='auth'>
-                <h1>Register</h1>
+                <h2>Register</h2>
                 {error && <div className='auth__error'>{error}</div>}
                 <form onSubmit={register} name='registration_form'>
                     <input
@@ -76,8 +76,9 @@ function Register() {
                     <Button type='submit'>REGISTER</Button>
                 </form>
                 <span>
-          Already have an account?  
-          <Link to='/login'>login</Link>
+          Already have an account? &nbsp;
+
+                    <Link to='/login' style={{ color: '#d97ca5', textDecoration: 'none', fontWeight: 'bold' }}>Login</Link>
         </span>
             </div>
         </div>

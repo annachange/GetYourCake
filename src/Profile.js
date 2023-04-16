@@ -22,9 +22,8 @@ function Profile() {
                 <p><strong>Generated revenue: </strong>€725</p>
                 <p><strong>Average order: </strong>€48</p>
                 <p><strong>Unique customers: </strong>10</p>
-                <h1>My profile card</h1>
+                <p><strong>Subscription plan: </strong>free</p>
 
-                <h1>My cakes</h1>
 
 
 

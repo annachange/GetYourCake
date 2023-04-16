@@ -37,7 +37,7 @@ function Login(){
     return(
         <div className='center'>
             <div className='auth'>
-                <h1>Log in</h1>
+                <h2>Log in</h2>
                 {error && <div className='auth__error'>{error}</div>}
                 <form onSubmit={login} name='login_form'>
                     <input
@@ -46,7 +46,6 @@ function Login(){
                         required
                         placeholder="Enter your email"
                         onChange={e => setEmail(e.target.value)}/>
-
                     <input
                         type='password'
                         value={password}
@@ -57,8 +56,8 @@ function Login(){
                     <Button type='submit'>LOGIN</Button>
                 </form>
                 <p>
-                    Don't have and account?
-                    <Link to='/register'>Create one here</Link>
+                    Don't have and account? &nbsp;
+                    <Link to='/register' style={{ color: '#d97ca5', textDecoration: 'none', fontWeight: 'bold' }}>Create one here</Link>
                 </p>
             </div>
         </div>
