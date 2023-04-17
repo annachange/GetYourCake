@@ -15,7 +15,7 @@ function HeroImage() {
             <header
                 style={{
                     paddingLeft: 0,
-                    margin: '20px',
+                    marginBottom: '20px',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
@@ -25,12 +25,12 @@ function HeroImage() {
 
             >
                 <div
-                    className='p-5 text-center bg-image'
+                    className='p-5 text-center bg-image '
                     style={{
                         backgroundImage:
                             "url('https://images.unsplash.com/photo-1626078364657-3a6b568028b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80')",
-                        height: 550,
-                        width: 900,
+                        height: 750,
+                        width: 1500,
                         backgroundSize: 'cover',
                         borderRadius: '20px',
                     }}
